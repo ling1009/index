@@ -118,6 +118,42 @@
         .customize .options .options_bed .step_one img{
             width: 180px;
         }   
+
+        .customize .options .options_bed .bed_one .back{
+            position: absolute;
+            top:904px;
+            right:955px;
+            width: 25%;
+            vertical-align: bottom;
+            opacity: 0%;
+            transition: 0.5s ease-in-out;
+        }
+
+        .customize .options .options_bed .bed_two .back{
+            position: absolute;
+            top:920px;
+            right:587px;
+            width: 23%;
+            vertical-align: bottom;
+            opacity: 0%;
+            transition: 0.5s ease-in-out;
+        }
+
+        .customize .options .options_bed .bed_three .back{
+            position: absolute;
+            top:910px;
+            right:220px;
+            width: 20%;
+            vertical-align: bottom;
+            opacity: 0%;
+            transition: 0.5s ease-in-out;
+        }
+
+        .options .options_bed .bed .back:hover{
+            opacity: 100%;
+            transition: 0.5s ease-in;
+        }
+
         .customize .title{
             font-size: 30px;
             text-align: center;
@@ -189,9 +225,9 @@
             margin: 5px 200px 100px 50px;
         }
         .customize .options .options_color .colors img{
-          padding: 20px;
-          margin: 10px 10px 0px 25px;
-        }
+            padding: 20px;
+            margin: 10px 10px 0px 25px;
+            }
 
         .customize .options .options_farbic .farbic_wrap{
             display: flex;
@@ -226,13 +262,24 @@
         }
 
         .customize .button_order{
-            text-align: right;
-            margin-top: 80px;
+            width: 1200px;
+            height: 100px;
+            margin: auto;
             position: relative;
-        }
+            top:0px;
+            right: 0px;
+        } 
 
         .customize .button_order img{
-            margin-right: 122px;
+          position: absolute;
+          top:80px;
+          right:20px;
+        }   
+
+        .customize .button_order .button_order_now{
+            position: absolute;
+            top:70px;
+            right:60px;
         }
 
         .customize .button_order .button_order_now{
@@ -241,9 +288,9 @@
             letter-spacing: 3px;
             font-size: 25px;
             text-shadow:0px 4px 4px rgba(0, 0, 0, 0.1);
-            position: absolute;
+            /* position: absolute;
             right:200px;
-            bottom: 10px;
+            bottom: 10px; */
         }
 
         .about_toy{
@@ -329,18 +376,28 @@
             width: 1200px;
             height: 860px;
             margin: auto;
+            margin-bottom: 70px;
             position: relative;
         }
 
         .new_toy h3{
+            font-weight: 500;
+            font-size: 28px;
+            letter-spacing: 0.225em;
+            color: rgba(0, 0, 0, 0.8);
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            margin: 110px;
             text-align: center;
+        }
+
+            /* text-align: center;
             font-size: 30px;
             font-weight: 700;
             color: rgba(0, 0, 0, 0.6);
             margin: 57px;
             letter-spacing: 5px;
 
-        }
+        } */
 
         .new_toy .toy_pic_wrap{
             display: flex;
@@ -397,12 +454,19 @@
             bottom:200px;
             left:220px;
         }
+        
+        .line_box{
+            width: 1200px;
+            height: 30px;
+            margin: auto;
+            position: relative;
+            vertical-align: bottom;
+        }
 
         .line{
             display: flex;
             width: 360px;
-            margin: 0px 0px 0px 750px;
-            position: relative;
+            margin: 0px 0px 0px 630px;
         }
 
         .line .txt{
@@ -417,8 +481,8 @@
             width: 25px;
             height: 25px;
             position: absolute;
-            left: 300px;
-            bottom: 20px;
+            left: 930px;
+            bottom: 25px;
         } 
 
         .line.line_icon img{
@@ -539,7 +603,7 @@
     </header>
     
     <main class="customize">
-        <h3 class="title">客製化毛孩的專屬睡墊</h3>
+        <h2 class="title">客製化毛孩的專屬睡墊</h2>
         <div class="options">
             <div class="options_bed">
                 <div class="step_one">
@@ -547,21 +611,24 @@
                     <p class="choose_bed">選擇床型</p>
                 </div>
                 <div class="bed bed_one">
-                    <img src="./pic/index/bed01.png" alt="">
+                    <img src="./pic/index/bed01.png" alt="" class="front">
+                    <img src="./pic/index/bed_dog01.png" alt="" class="back">
                      <div class="name_price">
                         <p class="name">圓形睡墊</p>
                         <p class="price">NT$ 860</p>
                      </div>
                 </div>
                 <div class="bed bed_two">
-                    <img src="./pic/index/bed02.png" alt="">
+                    <img src="./pic/index/bed02.png" alt="" class="front">
+                    <img src="./pic/index/bed_dog02.png" alt="" class="back">
                     <div class="name_price">
                         <p class="name">方形睡墊</p>
                         <p class="price">NT$ 950</p>
                      </div>
                 </div>
                 <div class="bed bed_three">
-                    <img src="./pic/index/bed03.png" alt="">
+                    <img src="./pic/index/bed03.png" alt="" class="front">
+                    <img src="./pic/index/bed_dog03.png" alt="" class="back">
                     <div class="name_price">
                         <p class="name">半月睡墊</p>
                         <p class="price">NT$ 980</p>
@@ -656,7 +723,7 @@
     <section class="new_toy">
 
         <h3>
-            新品上市 
+            拔河玩具組新上市 
         </h3>
 
         <div class="toy_pic_wrap">
@@ -670,17 +737,20 @@
                 <img src="./pic/index/toy03.PNG" alt="">
             </div>
         </div>
-
     </section>
 
-    <div class="line">
-        <p class="txt">
-            成為我們的LINE好友
-        </p>
-        <div class="line_icon">
-            <img src="./pic/index/line.png" alt="">
+
+    <div class="line_box">
+        <div class="line">
+            <h4 class="txt">
+                成為我們的LINE好友
+            </h4>
+            <div class="line_icon">
+                <img src="./pic/index/line.png" alt="">
+            </div>
         </div>
     </div>
+    
     <section class="contact_us">
         <div class="contact_pic">
             <img src="./pic/index/footer_bg.png" alt="">
@@ -755,9 +825,9 @@
     <footer>
         <div class="footer">
             <div class="footer_right">
-                <div class="logo">
+                <a href="./index.html" class="logo">
                     <img src="./pic/index/logo.png" alt="">
-                </div>
+                </a>
                 <div class="icon">
                    <img src="./pic/index/footer_icon.PNG" alt="">
                 </div>
