@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/reset.css">
+    <style>
+        body{
+            background-color: rgba(234, 238, 239, 0.8);
+        }
+
+        header{
+            width: 100%;
+            margin: auto;
+            background-color:rgba(117, 161, 167, 0.4);
+        }
+
+        header nav{
+            width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            background-color:rgba(117, 161, 167,);
+        }
+
+        .main_nav .logo{
+            width: 107px;
+            height: 102px;
+            margin: 10px;
+        }
+
+        .main_nav .logo img{
+            width: 100%;
+        }
+
+        .main_nav{
+            display: flex;
+            align-items: center;
+        }
+
+        .main_nav .link{
+            margin: 50px 40px 10px 40px;
+        }
+
+       .main_nav .link a{
+            margin: 40px 40px 40px 15px;
+            color: rgba(0, 0, 0, .5);
+            text-decoration: none;
+            text-shadow:0px 4px 4px rgba(0, 0, 0, 0.1);
+            font-weight: 800;
+            letter-spacing: 3px;
+            font-size: 20px;
+        }
+       
+        nav{
+            display: flex;
+            margin: auto;
+        }
+
+        header .user_cart{
+            display: flex;
+            align-items: center;
+            margin: 50px 10px 10px 40px;
+        }
+
+        header .user_cart img{
+            width: 24px;
+            padding: 15px;
+        }
+
+        .title{
+            font-size: 30px;
+            text-align: center;
+            font-weight: 700;
+            color: rgba(0, 0, 0, 0.6);
+            margin: 57px;
+            letter-spacing: 10px;
+      
+        }
+
+        .products{
+            margin-top: 140px;
+        }
+
+        .products_wrap {
+            width: 1200px;
+            margin: auto;
+            margin-top: 0px;
+            margin-bottom: 200px;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: white;
+            box-shadow: -1px 4px 6px rgba(0, 0, 0, 0.40);
+            border-radius: 15px;
+        }
+
+        .products .category{
+            display: flex;
+            width: 1200px;
+            height: 50px;
+            margin: auto;
+            margin-bottom: 0px;
+        }
+
+        .products .category .tag p{
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 60px;
+            letter-spacing: 3px;
+            color: rgba(0, 0, 0, 0.5);
+            text-shadow:0px 1px 1px rgba(0, 0, 0, 0.4);
+            text-align: center;
+
+        }
+
+
+        .products .category .tag_a{
+            width: 220px;
+            height:50px;
+            background-color:  rgba(117, 161, 167, 0.35);
+            margin-left: 30px;
+            box-shadow: -2px 0px 3px rgba(0, 0, 0, 0.40);
+            border-radius: 15px 15px 0px 0px;
+        }
+  
+        .products .category .tag_b{
+            width: 220px;
+            height:50px;
+            margin-left:px ;
+            background-color:  white;
+            border-radius: 15px 15px 0px 0px;
+        }
+    
+      
+        .products .category .tag_c{
+            width: 220px;
+            height:50px;
+            margin-left:3px ;
+            background-color:  white;
+            border-radius: 15px 15px 0px 0px;
+        }
+
+ 
+
+        .products_wrap .title {
+            width: 1200px;
+            height: 250px;
+            margin: auto;
+            margin-bottom: 200px;
+            background-color: rgba(117, 161, 167, 0.45);
+            display: flex;
+            justify-content: space-around;
+            border-radius: 15px 15px 0px 0px;
+            
+        }
+
+        .products_wrap .title .title_bg{
+            width: 450px;
+            padding: 40px;
+        }
+
+        .products_wrap .title p {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 45px;
+            letter-spacing: 2px;
+            color: rgba(0, 0, 0, 0.3);
+            text-shadow:0px 1px 1px rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+         
+
+        .products_wrap .title .title_pic{
+            width:500px;
+            margin-top: 80px;
+          
+        }
+
+        .products_wrap .title .title_pic img{
+            width: 100%;
+        }
+
+
+        .card{
+            width:253px;
+            margin: 10px;
+            position: relative;
+            margin: auto;
+            margin-top: 50px;     
+        }
+
+        .card .pic_box{
+            width:253px;
+            height:253px;
+            background-color: white;
+        }
+
+        .card .pic_box .front{
+            position: relative;
+            z-index: 2;
+        }
+
+        .card .pic_box .back{
+            width: 253px;
+            position: relative;
+            bottom: 255px;
+            z-index: 2;
+            opacity: 0%;
+        }
+
+
+        .card .pic_box .back:hover{
+            opacity: 100%;
+        }
+
+        
+
+        .card h4,.price,.button{
+            text-align: center;
+            line-height: 30px;
+            letter-spacing: 3px;
+            font-weight: bolder;
+        }
+
+        .card h4{
+            font-size: 16px;
+            color:rgba(0, 0, 0, 0.6);
+            text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+        }
+
+        .card .price{
+            color:rgba(207, 147, 142, 1);
+            font-weight: bolder;
+            font-size: 18px;
+        }
+
+
+        .card img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .card .tag{
+            position: absolute;
+            padding: 6px 10px;
+            background-color:rgba(207, 147, 142 ,0.6);
+            color: #fff;
+            font-size: 13px;
+            font-weight: bolder;
+            top: 20px;
+            left: -10px;
+            z-index: 3;
+        }
+
+        footer{
+            width: 100%;
+            height: 165px;
+            background: rgba(117, 161, 167, 0.4);
+        }
+
+        .footer{
+            width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer_right{
+            width: 300px;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .footer .logo{
+            width: 107px;
+            height: 102px;
+            margin: 5px;
+        }
+
+        .footer img{
+            width: 100%;
+        }
+
+        .footer .footer_right .icon{
+           width: 140px;
+           margin: 5px;
+        }
+
+        .footer_middle{
+            width: 140px;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .footer_left .address{
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 24px;
+            text-align: right;
+            letter-spacing: 0.175em;
+            color: #000000;
+            padding-top: 50px;
+        }
+
+
+
+
+
+    </style>
+</head>
+    
+    <header>
+        <nav>
+            <div class="main_nav">
+                <a href="/index.html" class="logo">
+                    <img src="/pic/index/logo.png" alt=""> 
+                </a>
+                <div class="link">
+                    <a href="/bedpage.html">客製化睡墊</a>
+                    <a href="/products.html">寵物玩具</a>
+                    <a href="/aboutus.html">聯絡我們</a>
+                </div>
+            </div>
+            <div class="user_cart">
+                <a href="#"><img src="/pic/index/cart.png" alt=""></a>
+                <a href="#"><img src="/pic/index/user.png" alt=""></a>
+            </div>
+        </nav>
+    </header>
+
+
+    <h3 class="title">寵物玩具</h3>
+    <main class="products">
+        <div class="category">
+           <ul class="tag tag_a">
+                <p>藏食玩具</p>
+           </ul>
+           <ul class="tag tag_b">
+            <p>響聲玩具</p>
+            </ul>
+            <ul class="tag tag_c">
+                <p>安撫玩具</p>
+            </ul>
+        </div>
+        <div class="products_wrap">
+            <div class="title">
+                <div class="title_bg">
+                    <p>
+                        藏食益智狗狗玩具<br>搭配各種特殊可愛的造型設計<br>使狗狗能夠動動腦、動動身體<br>讓狗狗玩樂的同時也能補充零食！
+                    </p>
+                </div>
+                <div class="title_pic">
+                    <img src="/pic/toy/dog-running.jpg" alt="">
+                </div>
+            </div>
+            <div class="card">
+                <div class="tag">新品上市</div>
+                <div class="pic_box">
+                    <img src="/pic/toy/toy001n.PNG" alt="" class="front">
+                    <img src="/pic/toy/toy001_2.PNG" alt="" class="back">
+                </div>
+                <h4>薯條造型發聲玩具</h4>
+                <p class="price">NT$ 250</p>
+                <div class="button">加入購物車</div>
+            </div>
+
+            <div class="card">
+                <div class="tag">新品上市</div>
+                <div class="pic_box">
+                    <img src="/pic/toy/toy002n.PNG" alt="" class="front">
+                    <img src="/pic/toy/toy002_2.PNG" alt="" class="back">
+                </div>
+                <h4>甜甜圈造型藏食玩具</h4>
+                <p class="price">NT$ 250</p>
+                <div class="button">加入購物車</div>
+            </div>
+
+            <div class="card">
+                
+                <div class="pic_box">
+                    <img src="/pic/toy/toy003n.PNG" alt="" class="front">
+                    <img src="/pic/toy/toy003_2.PNG" alt="" class="back">
+                </div>
+                <h4>酒瓶造型藏食玩具</h4>
+                <p class="price">NT$ 250</p>
+                <div class="button">加入購物車</div>
+            </div>
+            
+            <div class="card">
+                
+                <div class="pic_box">
+                    <img src="/pic/toy/toy004n.PNG" alt="" class="front">
+                    <img src="/pic/toy/toy004_2.PNG" alt="" class="back">
+                </div>
+                <h4>彩虹造型藏食玩具</h4>
+                <p class="price">NT$ 250</p>
+                <div class="button">加入購物車</div>
+            </div>
+            <div class="card">
+                
+                <div class="pic_box">
+                    <img src="/pic/toy/toy001n.PNG">
+                </div>
+                <h4>薯條造型發聲玩具</h4>
+                <p class="price">NT$ 250</p>
+                <div class="button">加入購物車</div>
+            </div>
+
+            <div class="card">
+                
+                <div class="pic_box">
+                    <img src="/pic/toy/toy002n.PNG">
+                </div>
+                <h4>甜甜圈造型藏食玩具</h4>
+                <p class="price">NT$ 250</p>
+                <div class="button">加入購物車</div>
+            </div>
+
+            <div class="card">
+               
+                <div class="pic_box">
+                    <img src="/pic/toy/toy003n.PNG">
+                </div>
+                <h4>酒瓶造型藏食玩具</h4>
+                <p class="price">NT$ 250</p>
+                <div class="button">加入購物車</div>
+            </div>
+            
+            <div class="card">
+                
+                <div class="pic_box">
+                    <img src="/pic/toy/toy004n.PNG">
+                </div>
+                <h4>彩虹造型藏食玩具</h4>
+                <p class="price">NT$ 250</p>
+                <div class="button">加入購物車</div>
+            </div>
+            <div class="card">
+                
+                <div class="pic_box">
+                    <img src="/pic/toy/toy001n.PNG">
+                </div>
+                <h4>薯條造型發聲玩具</h4>
+                <p class="price">NT$ 250</p>
+                <div class="button">加入購物車</div>
+            </div>
+
+            <div class="card">
+                
+                <div class="pic_box">
+                    <img src="/pic/toy/toy002n.PNG">
+                </div>
+                <h4>甜甜圈造型藏食玩具</h4>
+                <p class="price">NT$ 250</p>
+                <div class="button">加入購物車</div>
+            </div>
+
+            <div class="card">
+                
+                <div class="pic_box">
+                    <img src="/pic/toy/toy003n.PNG">
+                </div>
+                <h4>酒瓶造型藏食玩具</h4>
+                <p class="price">NT$ 250</p>
+                <div class="button">加入購物車</div>
+            </div>
+            
+            <div class="card">
+                
+                <div class="pic_box">
+                    <img src="/pic/toy/toy004n.PNG">
+                </div>
+                <h4>彩虹造型藏食玩具</h4>
+                <p class="price">NT$ 250</p>
+                <div class="button">加入購物車</div>
+            </div>
+            <div class="card">
+        
+                <div class="pic_box">
+                    <img src="/pic/toy/toy001n.PNG">
+                </div>
+                <h4>薯條造型發聲玩具</h4>
+                <p class="price">NT$ 250</p>
+                <div class="button">加入購物車</div>
+            </div>
+
+            <div class="card">
+                
+                <div class="pic_box">
+                    <img src="/pic/toy/toy002n.PNG">
+                </div>
+                <h4>甜甜圈造型藏食玩具</h4>
+                <p class="price">NT$ 250</p>
+                <div class="button">加入購物車</div>
+            </div>
+
+            <div class="card">
+               
+                <div class="pic_box">
+                    <img src="/pic/toy/toy003n.PNG">
+                </div>
+                <h4>酒瓶造型藏食玩具</h4>
+                <p class="price">NT$ 250</p>
+                <div class="button">加入購物車</div>
+            </div>
+            
+            <div class="card">
+            
+                <div class="pic_box">
+                    <img src="/pic/toy/toy004n.PNG">
+                </div>
+                <h4>彩虹造型藏食玩具</h4>
+                <p class="price">NT$ 250</p>
+                <div class="button">加入購物車</div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer>
+        <div class="footer">
+            <div class="footer_right">
+                <div class="logo">
+                    <img src="/pic/index/logo.png" alt="">
+                </div>
+                <div class="icon">
+                    <img src="/pic/index/footer_icon.PNG" alt="">
+                </div>
+            </div>
+
+            <div class="footer_middle">
+                <img src="/pic/index/footer_card.PNG" alt="">
+            </div>
+
+            <div class="footer_left">
+                    <p class="address">
+                        cozy dog股份有限公司<br>
+                        客服專線/02-1234567<br>
+                        客服信箱/cozydog@gmail.com<br>
+                    </p> 
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    </div>
+</body>
+</html>

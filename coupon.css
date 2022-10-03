@@ -1,0 +1,100 @@
+
+            @font-face {
+                font-family: ultra;
+                src: url(path/to/font/file/ultra) format('woff2');
+                font-weight: bold;
+                font-style: normal;
+                font-display: swap;
+            }
+            
+            .warp__placeholder{
+                position: absolute;
+                color: transparent;
+                font-size: .1px;
+            }
+            
+            .warp {
+                display: block;
+                position: relative;
+                width: 352px;
+                height: 100px;
+                font-weight: 600;
+            }
+            
+            [class*='warp__'] {
+                display: block;
+                position: absolute;
+                bottom: 540px;
+                right: 620px;
+            }
+            
+            .warp__0 {
+                transform-origin: 50% 15px;
+                transform: translate(96.919px,12.2149px) rotate(0.052247rad);
+            }
+            
+            .warp__1 {
+                transform-origin: 50% 15px;
+                transform: translate(121.74799999999999px,14.7635px) rotate(0.151554rad);
+            }
+            
+            .warp__2 {
+                transform-origin: 50% 15px;
+                transform: translate(145.9px,19.620800000000003px) rotate(0.244448rad);
+            }
+            
+            .warp__3 {
+                transform-origin: 50% 15px;
+                transform: translate(169.2468px,26.535899999999998px) rotate(0.330459rad);
+            }
+            
+            .warp__4 {
+                transform-origin: 50% 15px;
+                transform: translate(191.682px,35.2491px) rotate(0.409401rad);
+            }
+            
+            .warp__5 {
+                transform-origin: 50% 15px;
+                transform: translate(215.9644px,47.1687px) rotate(0.500089rad);
+            }
+            
+            .warp__6 {
+                transform-origin: 50% 15px;
+                transform: translate(236.5972px,59.5459px) rotate(0.582938rad);
+            }
+            
+            .warp__7 {
+                transform-origin: 50% 15px;
+                transform: translate(257.7305px,71.5019px) rotate(0.665496rad);
+            }
+            
+            .warp__8 {
+                transform-origin: 50% 15px;
+                transform: translate(268.5626px,82.8423px) rotate(0.74574rad);
+            }
+            
+            .warp__9 {
+                transform-origin: 50% 15px;
+                transform: translate(283.0508px,97.707px) rotate(0.852824rad);
+            }
+            
+            .warp__10 {
+                transform-origin: 50% 15px;
+                transform: translate(294.4653px,115.14189999999999px) rotate(0.979099rad);
+            }
+            
+            .warp__11 {
+                transform-origin: 50% 15px;
+                transform: translate(306.4668px,136.2248px) rotate(1.128638rad);
+            }
+            
+            .warp__12 {
+                transform-origin: 50% 15px;
+                transform: translate(315.3853px,159.6593px) rotate(1.285021rad);
+            }
+            
+            .warp__13 {
+                transform-origin: 50% 15px;
+                transform: translate(320.6017px,183.9268px) rotate(1.430814rad);
+            }
+
