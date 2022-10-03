@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="./CSS/reset.css">
     <link rel="stylesheet" href="./CSS/coupon.css">
     <style>
+        a{
+            text-decoration: none;
+        }
+
         body{
             background-color: rgba(234, 238, 239, 0.8);
         }
@@ -76,14 +80,7 @@
             padding: 15px;
         }
 
-        /* header .slogan{
-            line-height: 35px;
-            color: rgba(0, 0, 0, 0.50);
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
-            font-weight: 600;
-            font-size: 15px;
-            text-align: center;  
-        } */
+    
 
         .customize .options .options_bed{
             display: grid;
@@ -121,7 +118,7 @@
 
         .customize .options .options_bed .bed_one .back{
             position: absolute;
-            top:904px;
+            top:980px;
             right:955px;
             width: 25%;
             vertical-align: bottom;
@@ -131,7 +128,7 @@
 
         .customize .options .options_bed .bed_two .back{
             position: absolute;
-            top:920px;
+            top:996px;
             right:587px;
             width: 23%;
             vertical-align: bottom;
@@ -141,7 +138,7 @@
 
         .customize .options .options_bed .bed_three .back{
             position: absolute;
-            top:910px;
+            top:980px;
             right:220px;
             width: 20%;
             vertical-align: bottom;
@@ -161,6 +158,16 @@
             color: rgba(0, 0, 0, 0.6);
             margin: 57px;
             letter-spacing: 5px;
+            line-height: 50px;
+        }
+
+        .customize .slogan{
+            font-weight: 400;
+            font-size: 20px;
+            letter-spacing: 0.225em;
+            color: rgba(0, 0, 0, 0.8);
+            text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+
         }
 
         .customize .options .options_bed .choose_bed,.choose_colors,.choose_farbic{
@@ -390,15 +397,6 @@
             text-align: center;
         }
 
-            /* text-align: center;
-            font-size: 30px;
-            font-weight: 700;
-            color: rgba(0, 0, 0, 0.6);
-            margin: 57px;
-            letter-spacing: 5px;
-
-        } */
-
         .new_toy .toy_pic_wrap{
             display: flex;
         }
@@ -408,7 +406,7 @@
             height: 329px;
             margin: auto;
             position: absolute;
-            left:90px;
+            left:90px;  
         }
 
         .new_toy .toy_pic_wrap .toy_middle{
@@ -589,21 +587,19 @@
                 <div class="link">
                     <a href="./bedpage.html">客製化睡墊</a>
                     <a href="./products.html">寵物玩具</a>
-                    <a href="./aboutus.html">聯絡我們</a>
+                    <a href="./aboutus.html">關於我們</a>
                 </div>
             </div>
             <div class="user_cart">
                 <a href="#"><img src="./pic/index/cart.png" alt=""></a>
-                <a href="#"><img src="./pic/index/user.png" alt=""></a>
+                <a href="./login.html"><img src="./pic/index/user.png" alt=""></a>
             </div>
         </nav>
-        <!-- <p class="slogan">
-            寵物睡墊領導品牌<br>為毛小孩打造專屬的舒適睡眠空間
-        </p> -->
+ 
     </header>
     
     <main class="customize">
-        <h2 class="title">客製化毛孩的專屬睡墊</h2>
+        <h2 class="title">寵物睡墊領導品牌 <br> <span class="slogan">幫毛小孩打造專屬睡墊 </span></h2>
         <div class="options">
             <div class="options_bed">
                 <div class="step_one">
@@ -684,9 +680,9 @@
                 </div>
             </div>
         </div>
-        <div class="button_order">
+        <div class="button_order">   
             <img src="./pic/index/txt_bg02.png" alt="">
-            <p class="button_order_now">馬上訂製</p>
+            <a href="./bedpage.html" class="button_order_now">馬上訂製</a>
         </div>
     </main>
 
@@ -711,9 +707,9 @@
                 </p>
                 <div class="button_more">
                     <img src="./pic/index/txt_bg02.png" alt="">
-                    <p class="more">
-                        更多玩具
-                    </p>
+                    
+                    <a href="./products.html" class="more">更多玩具</a>
+                  
                 </div>
             </div>
 
