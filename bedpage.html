@@ -76,16 +76,26 @@
             color: rgba(0, 0, 0, 0.6);
             margin: 57px;
             letter-spacing: 5px;
+            
         }
 
         .intro{
-            width: 1200px;
+            /* width: 1200px; */
             display: flex;
             justify-content: center; 
             flex-direction: column;
             margin: auto;
             position: relative;
         }
+
+        .intro .box{
+            width: 300px;
+        }
+        .intro .box img{
+            width: 100%;
+        }
+
+
 
         .intro .card{
             width: 1200px; 
@@ -127,6 +137,7 @@
             color: rgba(0, 0, 0, 0.6);
             text-align: left;
             margin: 20px;
+            
         }
 
         .intro .card .txt_wrap span{
@@ -155,13 +166,55 @@
             left: 260px;
         }
 
+        banner{
+            width: 1200px;
+            height: 500px;
+            margin-bottom: 80px;
+            display: flex;
+            margin: auto;
+            background-image: url(./pic/dogbed/banner.jpg);
+            background-position: bottom;
+            background-size: cover;
+        }
+
+        banner .txtbox{
+            width: 600px;
+            height: 180px;
+            background-color: rgba(234, 238, 239, 0.8);
+            margin: auto;
+            margin-top: 350px;
+            text-align: center;
+            padding: 30px;
+        }
+
+        banner .txtbox .banner_title{
+            font-weight: 500;
+            font-size: 28px;
+            letter-spacing: 0.225em;
+            color: rgba(0, 0, 0, 0.8);
+            text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+            margin-bottom: 10px;
+
+        }
+
+        banner .txtbox .txt{
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 40px;
+            letter-spacing: 2px;
+            color: rgba(0, 0, 0, 0.76);
+            
+        }
+
         .customize_order .customize_bed{
             width: 1200px;
             height: 585px;
             margin: auto;
-            margin-top: 260px;
+            margin-top: 150px;
             display: flex;
             background: rgba(117, 161, 167,0.2);
+       
+            
         }
 
         .customize_order .customize_bed .options{
@@ -211,36 +264,32 @@
              height: 500px;
              display: flex;
              flex-direction: column;
-             justify-content: center;
+             justify-content:flex-end;
         }
 
         .customize_order .customize_bed .options .options_wrap ul{
-            height: 60px;
-            
-           
+            height: 50px;
         }
 
         .customize_order .customize_bed .options .options_wrap .button{
             background-color: rgba(117, 161, 167, 0.45);
             display: flex;
-            justify-content: space-evenly;
+            justify-content: space-around;
 
         }
 
         .customize_order .customize_bed .options .options_wrap .title p{
-            padding: 30px 40px;
             font-weight: 600;
             font-size: 20px;
-            line-height: 30px;
-            letter-spacing: 45px;
+            letter-spacing: 10px;
             color: rgba(0, 0, 0, 0.6);
+          
         }
 
         .customize_order .customize_bed .options .options_wrap .button .color_pic{
             width: 35px;
             height: 35px;
             margin: 10px;
-            background-color: black;
         }
 
         .customize_order .customize_bed .options .options_wrap .button .color_pic img{
@@ -258,14 +307,15 @@
             height: 100%;
         }
 
+        /* <---------尺寸SMLXL--------------> */
         .customize_order .customize_bed .options .options_wrap .button .txt{
             font-weight: bolder;
             font-size: 24px;
-            line-height: 30px;
+            line-height: 10px;
             padding: 15px;
             word-spacing: 60px;
             color: rgba(0, 0, 0, 0.6);
-            margin-right: 220px;
+            margin: auto;
         }
 
         .customize_order .footprint_box{
@@ -392,7 +442,6 @@
             letter-spacing: 1.37em;
             color: rgba(0, 0, 0, 0.5);
         }
-
         footer{
             width: 100%;
             height: 165px;
@@ -443,7 +492,6 @@
             padding-top: 50px;
         }
 
-       
 
 
     </style>
@@ -471,7 +519,20 @@
 
     <section class="intro">
         <h3 class="title">客製化睡墊</h3>
-        <ul class="card">
+
+        <banner>
+            <div class="txtbox">
+                <h3 class="banner_title">打造專屬睡墊</h3>
+                <p class="txt">
+                    由您設計，由我們賦予生命！<br>
+                    從多種面料中進行選擇，打造專屬於您和毛小孩個性的床或配飾！<br>
+                    我們迫不及待地想看看你的設計
+                </p>
+            </div>
+        </banner>
+
+    
+        <!-- <ul class="card">
             <div class="pic">
                 <img src="./pic/dogbed/intro_one.jpg" alt="">
                 <img class="circle" src="./pic/dogbed/pick_circle.png" alt="">
@@ -499,7 +560,7 @@
         <div class="footprint_two">
             <img src="./pic/dogbed/footprint.png" alt="">
         </div>
-    </section>
+    </section> -->
 
     <main class="customize_order">
         <section class="customize_bed">
@@ -507,7 +568,7 @@
             <div class="options">    
                 <div class="options_wrap">
                     <ul class="title">
-                        <p>花色</p>
+                        <p>選擇花色</p>
                     </ul>
                     <ul class="button">
                         <div class="color_pic">
@@ -531,7 +592,7 @@
 
                     </ul>
                     <ul class="title">
-                        <p>布料</p>
+                        <p>選擇布料</p>
                     </ul>
                     <ul class="button button_fabric">
                         <div class="fabric_pic">
@@ -549,7 +610,7 @@
 
                     </ul>
                     <ul class="title">
-                        <p>尺寸</p>
+                        <p>選擇尺寸</p>
                     </ul>
                     <ul class="button">
                         <div class="txt">
@@ -638,6 +699,8 @@
             </tbody>
         </table>
     </section>
+
+
 
 
     <footer>
