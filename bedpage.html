@@ -6,500 +6,356 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bedpage</title>
     <link rel="stylesheet" href="./CSS/reset.css">
+    <link rel="stylesheet" href="./CSS/coupon.css">
+    <link rel="stylesheet" href="./CSS/CSS.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+   
     <style>
-        body{
-            background-color: rgba(234, 238, 239, 0.8);
-        }
-
-        header{
-            width: 100%;
-            margin: auto;
-            background-color:rgba(117, 161, 167, 0.4);
-        }
-
-        header nav{
-            width: 1200px;
-            display: flex;
-            justify-content: space-between;
-            background-color:rgba(117, 161, 167,);
-        }
-
-        .main_nav .logo{
-            width: 107px;
-            height: 102px;
-            margin: 10px;
-        }
-
-        .main_nav .logo img{
-            width: 100%;
-        }
-
-        .main_nav{
-            display: flex;
-            align-items: center;
-        }
-
-        .main_nav .link{
-            margin: 50px 40px 10px 40px;
-        }
-
-       .main_nav .link a{
-            margin: 40px 40px 40px 15px;
-            color: rgba(0, 0, 0, .5);
-            text-decoration: none;
-            text-shadow:0px 4px 4px rgba(0, 0, 0, 0.1);
-            font-weight: 800;
-            letter-spacing: 3px;
-            font-size: 20px;
-        }
-       
-        nav{
-            display: flex;
-            margin: auto;
-        }
-
-        header .user_cart{
-            display: flex;
-            align-items: center;
-            margin: 50px 10px 10px 40px;
-        }
-
-        header .user_cart img{
-            width: 24px;
-            padding: 15px;
-        }
-
-        .intro .title{
-            font-size: 30px;
-            text-align: center;
-            font-weight: 700;
-            color: rgba(0, 0, 0, 0.6);
-            margin: 57px;
-            letter-spacing: 5px;
-            
-        }
-
-        .intro{
-            /* width: 1200px; */
-            display: flex;
-            justify-content: center; 
-            flex-direction: column;
-            margin: auto;
-            position: relative;
-        }
-
-        .intro .box{
-            width: 300px;
-        }
-        .intro .box img{
-            width: 100%;
-        }
-
-
-
-        .intro .card{
-            width: 1200px; 
-            display: flex; 
-            flex-direction: row;
-            justify-content: center; 
-            justify-content: space-evenly;
-            margin-bottom: 50px;
-        }
-
-        .intro .card .pic{
-            width: 360px;
-            height: 300px;
-            position: relative;
-        }
-
-        .intro .card .pic img{
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transform: rotate(270deg);
-          border-radius: 48%;
-          
-        }
-
-        .intro .card:nth-child(4){
-            flex-direction: row-reverse;
-        }
-
-        .card .txt_wrap{
-            width: 400px;
-        }
-
-        .intro .card .txt_wrap{
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 80px;
-            letter-spacing: 0.125em;
-            color: rgba(0, 0, 0, 0.6);
-            text-align: left;
-            margin: 20px;
-            
-        }
-
-        .intro .card .txt_wrap span{
-            margin-left: 60px;
-        }
-
-        .intro .footprint_one{
-            position: absolute;
-            top: 450px;
-            right: 520px;
-        }
-
-        .intro .footprint_two{
-            position: absolute;
-            top: 800px;
-            right: 540px;
-            transform: rotate(60deg);
-        }
-
-        .intro .card .pic .circle{
-            width: 80px;
-            height:80px;
-            opacity:80%;
-            position: absolute;
-            top:250px;
-            left: 260px;
-        }
-
-        banner{
-            width: 1200px;
-            height: 500px;
-            margin-bottom: 80px;
-            display: flex;
-            margin: auto;
-            background-image: url(./pic/dogbed/banner.jpg);
-            background-position: bottom;
-            background-size: cover;
-        }
-
-        banner .txtbox{
-            width: 600px;
-            height: 180px;
-            background-color: rgba(234, 238, 239, 0.8);
-            margin: auto;
-            margin-top: 350px;
-            text-align: center;
-            padding: 30px;
-        }
-
-        banner .txtbox .banner_title{
-            font-weight: 500;
-            font-size: 28px;
-            letter-spacing: 0.225em;
-            color: rgba(0, 0, 0, 0.8);
-            text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-            margin-bottom: 10px;
-
-        }
-
-        banner .txtbox .txt{
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 40px;
-            letter-spacing: 2px;
-            color: rgba(0, 0, 0, 0.76);
-            
-        }
-
-        .customize_order .customize_bed{
-            width: 1200px;
-            height: 585px;
-            margin: auto;
-            margin-top: 150px;
-            display: flex;
-            background: rgba(117, 161, 167,0.2);
-       
-            
-        }
-
-        .customize_order .customize_bed .options{
-            flex-grow:1.5;
-            border-right: 1px solid rgba(0, 0, 0, 0.3);
-            margin: auto;
-        }
-
-        .customize_order .customize_bed .pic{
-            flex-grow:2;
-        }
-
-        .customize_order .customize_bed .pic .pic_selected{
-            width: 510px;
-            height: 300px; 
-            margin: auto;
-            margin-top: 30px;
-        }
-
-        .customize_order .customize_bed .pic .pic_selected img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .customize_order .customize_bed .pic .pic_small{
-            width: 510px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .customize_order .customize_bed .pic .pic_small .box{
-            width: 150px;
-            height: 150px;
-            background-color: rgba(217, 217, 217, 0.74);
-            margin-top: 60px;
-        }
-
-        .customize_order .customize_bed .pic .pic_small .box img{
-            width: 100%;
-            opacity: 50%;
-        } 
-
-        .customize_order .customize_bed .options .options_wrap{
-             border-right: 1px solid rgba(0, 0, 0, 0.5);
-             height: 500px;
-             display: flex;
-             flex-direction: column;
-             justify-content:flex-end;
-        }
-
-        .customize_order .customize_bed .options .options_wrap ul{
-            height: 50px;
-        }
-
-        .customize_order .customize_bed .options .options_wrap .button{
-            background-color: rgba(117, 161, 167, 0.45);
-            display: flex;
-            justify-content: space-around;
-
-        }
-
-        .customize_order .customize_bed .options .options_wrap .title p{
-            font-weight: 600;
-            font-size: 20px;
-            letter-spacing: 10px;
-            color: rgba(0, 0, 0, 0.6);
-          
-        }
-
-        .customize_order .customize_bed .options .options_wrap .button .color_pic{
-            width: 35px;
-            height: 35px;
-            margin: 10px;
-        }
-
-        .customize_order .customize_bed .options .options_wrap .button .color_pic img{
-            width: 100%;
-        }
-
-        .customize_order .customize_bed .options .options_wrap .button .fabric_pic{
-            width: 80px;
-            height: 40px;
-            margin: 10px 5px 10px 10px;
-        }
-
-        .customize_order .customize_bed .options .options_wrap .button .fabric_pic img{
-            width: 100%;
-            height: 100%;
-        }
-
-        /* <---------尺寸SMLXL--------------> */
-        .customize_order .customize_bed .options .options_wrap .button .txt{
-            font-weight: bolder;
-            font-size: 24px;
-            line-height: 10px;
-            padding: 15px;
-            word-spacing: 60px;
-            color: rgba(0, 0, 0, 0.6);
-            margin: auto;
-        }
-
-        .customize_order .footprint_box{
-            width: 1200px;
-            height: 250px;
-            margin: auto;
-            background: rgba(117, 161, 167,0.2);
-            position: relative;
-        }
-
-        main .footprint_three{
-            position: absolute;
-            top:2px;
-            right:500px;
-        }
-
-        .customize_order .toy h4{
-            color: rgba(0, 0, 0, .5);
-            font-weight: 800;
-            letter-spacing:3px;
-            font-size: 25px;
-            text-shadow:0px 2px 2px rgba(0, 0, 0, 0.1);
-            width: 1100px;
-            text-align: right;
-            padding: 30px;
-        }
-
-        .customize_order .toy{
-            width: 1200px;        
-            height: 700px;
-            margin: auto;
-            background: rgba(117, 161, 167,0.2);
-        }
-
-        .customize_order .toy .toy_pic{
-            width: 1200px;
-            display: flex;
-        }
-
-        .customize_order .toy .toy_pic .bunny{
-            width:  600px;
-            height: 350px;
-            margin: 15px;
-            /* border: 1px solid purple; */
-
-        }
-        .customize_order .toy .toy_pic .bunny img{
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            margin: auto;
-        }
-
-        .customize_order .toy .toy_pic .right img{
-            margin-top: 60px;
-            transform: rotate(-20.04deg);
-        }
-
-        .customize_order .toy .toy_pic .left img{
-            margin-top: 60px;
-            transform: rotate(20.04deg);
-        }
-
-        .customize_order .toy .buttons{
-            display: flex;
-            margin-top: 120px;
-            justify-content: end;
-            padding: 25px;
-
-        }
-
-
-        .customize_order .toy .buttons .cart a{
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 23px;
-            line-height: 2px;
-            letter-spacing: 6px;
-            color: rgba(0, 0, 0, 0.5);
-            background-color: rgba(207, 147, 142, 0.58);
-            border-radius: 10px;
-            padding:10px 30px;
-            margin: 10px;
-        }
-
-        .size_table{
-            width: 1200px;
-            margin: auto;
-            margin-bottom: 100px;
-        }
-
-        .size_table table{
-            width: 900px;
-            height: 400px;
-            margin: auto;
-            margin-top: 60px;
-        }
-
-
-        .size_table table tbody td{
-            border: 1px solid rgba(0, 0, 0, 0.5);
-            text-align: center;
-            vertical-align: middle;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 18px;
-            text-align: center;
-            letter-spacing: 0.245em;
-            color: rgba(0, 0, 0, 0.5);
-            height: 100px;
-        }
-
-        .size_table table tbody .sizes{
-            font-weight: 600;
-            font-size: 20px;
-            line-height: 10px;
-        }
-
-
-        .size_table table thead th{
-            font-weight: 600;
-            font-size: 20px;
-            padding: 30px;
-            letter-spacing: 1.37em;
-            color: rgba(0, 0, 0, 0.5);
-        }
-        footer{
-            width: 100%;
-            height: 165px;
-            background: rgba(117, 161, 167, 0.4);
-        }
-
-        .footer{
-            width: 1200px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .footer_right{
-            width: 300px;
-            display: flex;
-            align-items: flex-end;
-        }
-
-        .footer .logo{
-            width: 107px;
-            height: 102px;
-            margin: 5px;
-        }
-
-        .footer img{
-            width: 100%;
-        }
-
-        .footer .footer_right .icon{
-           width: 140px;
-           margin: 5px;
-        }
-
-        .footer_middle{
-            width: 140px;
-            display: flex;
-            align-items: flex-end;
-        }
-
-        .footer_left .address{
-            font-weight: 400;
-            font-size: 15px;
-            line-height: 24px;
-            text-align: right;
-            letter-spacing: 0.175em;
-            color: #000000;
-            padding-top: 50px;
-        }
-
-
 
+    .size_table{
+        width: 100%;
+        height: 3000px;
+        background: rgba(66,66,66,.5);
+        position: fixed;
+        top:0px;
+        z-index: 3;
+        display: none;
+        }
+
+    table{
+        margin: auto;
+    }
+
+    .table_wrap{
+        width: 750px;
+        height: 650px;
+        margin: auto;
+        margin-top: 50px;
+        background-color: white;
+        border-radius: 40px;
+    }
+
+
+    .size_table table tbody td{
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        text-align: center;
+        vertical-align: middle;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 18px;
+        text-align: center;
+        letter-spacing: 0.245em;
+        color: rgba(0, 0, 0, 0.5);
+        height: 80px;
+    }
+
+    .size_table table tbody .sizes{
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 10px;
+    }
+
+    button{
+        position: absolute;
+        top:80px;
+        right:430px;
+    }
+
+
+    .size_table table thead th{
+        font-weight: 600;
+        font-size: 20px;
+        padding: 30px;
+        letter-spacing: 1.37em;
+        color: rgba(0, 0, 0, 0.5);
+    }
+
+    .size_pic{
+        width:650px ;
+        height:300px ;
+        margin: auto;
+    }
+    
+    .size_pic img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    banner{
+        width: 1200px;
+        height: 500px;
+        margin-bottom: 80px;
+        display: flex;
+        margin: auto;
+        background-image: url(./pic/dogbed/banner.jpg);
+        background-position: bottom;
+        background-size: cover;
+    }
+
+    banner .txtbox{
+        width: 600px;
+        height: 180px;
+        background-color: rgba(234, 238, 239, 0.8);
+        margin: auto;
+        margin-top: 350px;
+        text-align: center;
+        padding: 30px;
+    }
+
+    banner .txtbox .banner_title{
+        font-weight: 500;
+        font-size: 28px;
+        letter-spacing: 0.225em;
+        color: rgba(0, 0, 0, 0.8);
+        text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+        margin-bottom: 10px;
+
+    }
+
+    banner .txtbox .txt{
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 40px;
+        letter-spacing: 2px;
+        color: rgba(0, 0, 0, 0.76);
+    }
+
+    .bed_page{
+        font-size: 30px;
+        text-align: center;
+        font-weight: 700;
+        color: rgba(0, 0, 0, 0.6);
+        margin: 57px;
+        letter-spacing: 5px;
+    }
+
+    .fqa{
+        font-size: 30px;
+        text-align: center;
+        font-weight: 700;
+        color: rgba(0, 0, 0, 0.6);
+        margin: 57px;
+        letter-spacing: 5px;
+    }
+
+
+    .wrap{
+        max-width: 1200px;
+        margin:  150px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        background: rgba(117, 161, 167,0.2);
+    }
+
+
+    .wrap .one{
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    .wrap .two{
+        text-align: left;
+        vertical-align: middle;
+        display: none;
+    }
+
+    .wrap .three{
+        text-align: left;
+        vertical-align: middle;
+        display: none;
+    }
+
+    .wrap .one img{
+        margin: 10px;
+        vertical-align: middle;
+    }
+    .wrap .two img{
+        margin: 10px;
+        vertical-align: middle;
+    }
+    .wrap .three img{
+        margin: 10px;
+        vertical-align: middle;
+    }
+
+    .group{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    span{
+        width: 100%;
+        font-weight: 600;
+        font-size: 25px;
+        line-height: 70px;
+        margin: auto;
+        margin-left: 10px;
+        letter-spacing: 10px;
+        color: rgba(0, 0, 0, 0.5);
+    }
+
+    .size{
+        font-weight: 800;
+        font-size: 25px;
+        line-height: 50px;
+        margin: auto;
+        margin-left: 10px;
+        letter-spacing: 10px;
+        color:  rgba(0, 0, 0, 0.76);
+        text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25); 
+    }
+
+    .wrap .left  {
+        padding-bottom: 40px;
+    }
+
+    .wrap .left .bedbox .bed{
+        width: 540px;
+        height: 350px;
+    }
+
+    .wrap .left .bedbox .bed img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .wrap .left .tabs li{
+        width: 175px;
+        height: 150px;
+    }
+
+    .wrap .left .tabs li img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .focus{
+        outline: 5px dashed white;
+    }
+
+    .checkout{
+        width: 150px;
+        border-radius: 30px;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 5px;
+        padding: 10px 20px;
+        margin-left: 10px;
+        margin-top: 50px;
+        outline: 0;
+        border: 1px solid gray;
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+    }
+
+    .checkout::after {
+        content: "";
+        background-color: rgba(207, 147, 142, 0.67);
+        border-radius: 30px;
+        width: 100%;
+        z-index: 1;
+        position: absolute;
+        height: 100%;
+        top: 7px;
+        left: 7px;
+        transition: 0.2s;
+    }
+
+    .checkout:hover::after {
+        top: 0px;
+        left: 0px;
+    }
+
+    .size_icon{
+        padding-left: 100px;
+    }
+
+    input {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+    }
+    .accordion-wrapper {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+        max-width: 1200px;
+        margin:50px auto  100px auto;
+        
+    }
+    .accordion {
+        width: 100%;
+        color: white;
+        overflow: hidden;
+        margin-bottom: 16px;
+    }
+    .accordion:last-child{
+        margin-bottom: 0;
+    }
+    .accordion-label {
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        padding: 16px;
+        background: rgba(117, 161, 167, 0.7);
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 20px;
+    }
+    .accordion-label:hover {
+        background: rgba(207, 147, 142, 0.6);
+    }
+    .accordion-label::after {
+        content: "\276F";
+        width: 16px;
+        height: 16px;
+        text-align: center;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+    .accordion-content {
+        max-height: 0;
+        padding: 0 16px;
+        color: rgba(117, 161, 167, 0.7);
+        background: white;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+    .accordion-content p{
+        margin: 0;
+        color: rgba(117, 161, 167, 0.7);
+        font-size: 18px;
+        line-height: 50px;
+    }
+    input:checked + .accordion-label {
+        background: rgba(117, 161, 167, 0.7);
+    }
+    input:checked + .accordion-label::after {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+    input:checked ~ .accordion-content {
+        max-height: 100vh;
+        padding: 16px;
+    }
+
+     
     </style>
 </head>
 <body>
-
+<!-- <--------------header---------------> 
+    <input type="checkbox" name="" id="menu_switch">
     <header>
         <nav>
+            <!-- 選單/logo -->
             <div class="main_nav">
                 <a href="./index.html" class="logo">
                     <img src="./pic/index/logo.png" alt=""> 
@@ -510,170 +366,29 @@
                     <a href="./aboutus.html">關於我們</a>
                 </div>
             </div>
+
+            <!-- 漢堡 -->
+            <label for="menu_switch" class="hb">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <!-- 會員/購物車 -->
             <div class="user_cart">
                 <a href="#"><img src="./pic/index/cart.png" alt=""></a>
                 <a href="./login.html"><img src="./pic/index/user.png" alt=""></a>
-            </div>
+            </div> 
         </nav>
     </header>
 
-    <section class="intro">
-        <h3 class="title">客製化睡墊</h3>
-
-        <banner>
-            <div class="txtbox">
-                <h3 class="banner_title">打造專屬睡墊</h3>
-                <p class="txt">
-                    由您設計，由我們賦予生命！<br>
-                    從多種面料中進行選擇，打造專屬於您和毛小孩個性的床或配飾！<br>
-                    我們迫不及待地想看看你的設計
-                </p>
-            </div>
-        </banner>
-
-    
-        <!-- <ul class="card">
-            <div class="pic">
-                <img src="./pic/dogbed/intro_one.jpg" alt="">
-                <img class="circle" src="./pic/dogbed/pick_circle.png" alt="">
-            </div>
-            <div class="txt_wrap">
-                一夜好眠是狗狗的活力來源<br>
-                <span>狗狗一天需要十六小時的睡眠時間<br></span>
-                給毛孩有品質且充足的睡眠
-            </div>
-        </ul>
-        <div class="footprint_one">
-            <img src="./pic/dogbed/footprint.png" alt="">
-        </div>
-        <ul class="card">
-            <div class="pic">
-                <img src="./pic/dogbed/intro_two.jpg" alt="">
-                <img class="circle" src="./pic/dogbed/pick_circle.png" alt="">
-            </div>
-            <div class="txt_wrap">
-                彈力釋壓記憶睡墊<br>
-                <span>水洗快乾不沾毛<br></span>
-                細緻質感棉柔布料
-            </div>
-        </ul>
-        <div class="footprint_two">
-            <img src="./pic/dogbed/footprint.png" alt="">
-        </div>
-    </section> -->
-
-    <main class="customize_order">
-        <section class="customize_bed">
-            <!-- 綠色左 -->
-            <div class="options">    
-                <div class="options_wrap">
-                    <ul class="title">
-                        <p>選擇花色</p>
-                    </ul>
-                    <ul class="button">
-                        <div class="color_pic">
-                            <img src="./pic/dogbed/color01.png" alt="">
-                        </div>
-                        <div class="color_pic">
-                            <img src="./pic/dogbed/color03.png" alt="">
-                        </div>
-                        <div class="color_pic">
-                            <img src="./pic/dogbed/color_blue.png" alt="">
-                        </div>
-                        <div class="color_pic">
-                            <img src="./pic/dogbed/color01.png" alt="">
-                        </div>
-                        <div class="color_pic">
-                            <img src="./pic/dogbed/color03.png" alt="">
-                        </div>
-                        <div class="color_pic">
-                            <img src="./pic/dogbed/color01.png" alt="">
-                        </div>
-
-                    </ul>
-                    <ul class="title">
-                        <p>選擇布料</p>
-                    </ul>
-                    <ul class="button button_fabric">
-                        <div class="fabric_pic">
-                            <img src="./pic/dogbed/fur.PNG" alt="">
-                        </div>
-                        <div class="fabric_pic">
-                            <img src="./pic/dogbed/cool.PNG" alt="">
-                        </div>
-                        <div class="fabric_pic">
-                            <img src="./pic/dogbed/cotton.PNG" alt="">
-                        </div>
-                        <div class="fabric_pic">
-                            <img src="./pic/dogbed/fur.PNG" alt="">
-                        </div>
-
-                    </ul>
-                    <ul class="title">
-                        <p>選擇尺寸</p>
-                    </ul>
-                    <ul class="button">
-                        <div class="txt">
-                            S M L XL 
-                        </div>
-                    </ul>
-                </div>
-            </div>
-
-
-            <!-- 綠色右 -->
-            <div class="pic">
-                <div class="pic_selected">
-                    <img src="./pic/dogbed/bed_selected.png" alt="">
-                </div>
-
-                <div class="pic_small">
-                    <div class="box">
-                        <img src="./pic/index/bed01.png" alt="">
-                    </div>
-                    <div class="box">
-                        <img src="./pic/index/bed02.png" alt="">
-                    </div>
-                    <div class="box">
-                        <img src="./pic/index/bed03.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </section>
-     
-        <div class="footprint_box">
-            <div class="footprint_three">
-                <img src="./pic/dogbed/footprint.png" alt="">
-            </div>
-        </div>
-
-        <section class="toy">
-            <h4>幫毛小孩挑選一個睡眠夥伴</h4>
-            <div class="toy_pic">
-                <div class="bunny right">
-                    <img src="./pic/dogbed/toy.png" alt="">
-                </div>
-                <div class="bunny middle">
-                    <img src="./pic/dogbed/toy.png" alt="">
-                </div>
-                <div class="bunny left">
-                    <img src="./pic/dogbed/toy.png" alt="">
-                </div>
-                <!-- <img class="arrow_right" src="/pic/dogbed/arrow_left.png" alt=""> -->
-            </div>
-            <div class="buttons">
-                <div class="cart">
-                    <a href="#">再訂製一個</a>
-                    <a href="#">加入購物車</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <section class="size_table">
+<!-- <--------------size_table---------------> 
+    <div class="size_table" id="table">
+        <div class="table_wrap">
         <table>
             <thead>
                 <th colspan="4">尺寸參考</th>
+                <button id="close">x</button>
             </thead>
             <tbody>
                 <tr>
@@ -697,8 +412,154 @@
                     <td>W100 x D93 cm</td>
                 </tr>
             </tbody>
-        </table>
-    </section>
+        </table> 
+        <div class="size_pic">
+            <img src="./pic/dogbed/size_pic.png" alt=""> 
+        </div> 
+        </div>
+    </div>
+
+    <h3 class="bed_page">客製化睡墊</h3>
+
+<!-- <--------------banner---------------> 
+    <banner>
+        <div class="txtbox">
+            <h3 class="banner_title">打造專屬睡墊</h3>
+            <p class="txt">
+                由您設計，由我們賦予生命！<br>
+                從多種面料中進行選擇，打造專屬於您和毛小孩個性的床或配飾！<br>
+                我們迫不及待地想看看你的設計
+            </p>
+        </div>
+    </banner> 
+
+<!-- <--------------bed---------------> 
+    <div class="wrap">
+        <div class="left">
+            <div class="bedbox">
+                <div class="bed">
+                    <img class="large" id="large" src="./pic/index/bed01.png">
+                </div>
+            </div>
+
+            <ul class="tabs group" id="smallPanel">
+                <li><a class="active" href="#/one"><img src="./pic/index/bed01.png"></a></li>
+                <li><a href="#/two"><img src="./pic/index/bed02.png"></a></li>
+                <li><a href="#/three"><img src="./pic/index/bed03.png"></a></li>
+            </ul>
+        </div>
+
+            <div id="content" class="content">
+                <p id="one" class="one"> 
+                    <span>1.選擇花色A</span><br>
+                    <img id="patter01" class="image" src="./pic/dogbed/patter01.png" alt="">
+                    <img id="patter02" class="image" src="./pic/dogbed/patter02.png" alt="">
+                    <img id="patter03" class="image" src="./pic/dogbed/patter03.png" alt="">
+                    <img class="image" src="./pic/dogbed/patter01.png" alt="">
+                    <img class="image" src="./pic/dogbed/patter02.png" alt="">
+                    <img class="image" src="./pic/dogbed/patter03.png" alt="">
+                    <br>
+
+                    <span>2.選擇布料</span><br>
+                    <img class="image" src="./pic/dogbed/cotton 1.png" alt="">棉布
+                    <img class="image" src="./pic/dogbed/cool 1.png" alt="">涼感
+                    <img class="image" src="./pic/dogbed/fur 1.png" alt="">絨布
+
+                    <br>
+
+                    <span>3.選擇尺寸</span><br>
+                   
+                    <span class="size"> S  </span>
+                    <span class="size"> M  </span>
+                    <span class="size"> L </span>
+                    <span class="size"> XL </span>
+                    <img class="size_icon" src="./pic/dogbed/sizing.png" alt="">尺寸表
+                </p>
+
+                <p id="two" class="two"> 
+                    <span>1.選擇花色B</span><br>
+                    <img id="patterb01" class="image" src="./pic/dogbed/patter01.png" alt="">
+                    <img id="patterb02" class="image"  src="./pic/dogbed/patter02.png" alt="">
+                    <img id="patterb03" class="image" src="./pic/dogbed/patter03.png" alt="">
+                    <img class="image" src="./pic/dogbed/patter01.png" alt="">
+                    <img class="image" src="./pic/dogbed/patter02.png" alt="">
+                    <img class="image" src="./pic/dogbed/patter03.png" alt="">
+                    <br>
+
+                    <span>2.選擇布料</span><br>
+                    <img class="image" src="./pic/dogbed/cotton 1.png" alt="">棉布
+                    <img class="image" src="./pic/dogbed/cool 1.png" alt="">涼感
+                    <img class="image" src="./pic/dogbed/fur 1.png" alt="">絨布
+                    <br>
+
+                    <span>3.選擇尺寸</span><br>
+                    <span class="size"> S  </span>
+                    <span class="size"> M  </span>
+                    <span class="size"> L </span>
+                    <span class="size"> XL </span>
+                    <img class="size_icon" src="./pic/dogbed/sizing.png" alt="">尺寸表
+                </p>
+
+
+                <p id="three" class="three">
+                    <span>1.選擇花色C</span><br>
+                    <img id="patterc01" class="image" src="./pic/dogbed/patterc01.png" alt="">
+                    <img id="patterc02" class="image" src="./pic/dogbed/patter02.png" alt="">
+                    <img id="patterc03" class="image" src="./pic/dogbed/patter03.png" alt="">
+                    <img class="image" src="./pic/dogbed/patter01.png" alt="">
+                    <img class="image" src="./pic/dogbed/patter02.png" alt="">
+                    <img class="image" src="./pic/dogbed/patter03.png" alt="">
+                    <br>
+
+                    <span>2.選擇布料</span><br>
+                    <img class="image" src="./pic/dogbed/cotton 1.png" alt="">棉布
+                    <img class="image" src="./pic/dogbed/cool 1.png" alt="">涼感
+                    <img class="image" src="./pic/dogbed/fur 1.png" alt="">絨布
+                    <br>
+
+                    <span>3.選擇尺寸 </span><br>
+                    <span class="size"> S  </span>
+                    <span class="size"> M  </span>
+                    <span class="size"> L </span>
+                    <span class="size"> XL </span>
+                    <img class="size_icon" src="./pic/dogbed/sizing.png" alt="">尺寸表
+                </p>
+                <div class="checkout">加入購物車</div> 
+                <div class="checkout">前往結帳</div>
+               
+            </div>
+    </div>
+
+<!-- <--------------FQA---------------> 
+    <h3 class="fqa">常見問題</h3>
+
+    <div class="accordion-wrapper">
+        <div class="accordion">
+        <input type="radio" name="radio-a" id="check1" checked>
+        <label class="accordion-label" for="check1">床套的材質是什麼？ 如何清潔 ?</label>
+        <div class="accordion-content">
+            <p>我們嚴選三種不同材質的布料，我們的材質較皆較不易沾毛，表面的防撥水塗層使布料更抗污耐髒，且觸感舒適又保有透氣性。為了毛孩健康，cozy dog使用的布料都是有通過紡織品無毒保證 OEKO-TEX® Standard 100
+            在 cozy dog，實用性與風格同樣重要。 我們的產品不僅在家中看起來很棒，而且設計用於易於護理和維護。 所有產品均可機洗和烘乾。 所有 Bowser 床都有拉鍊、可拆卸的洗滌蓋。 我們的墊子和靠墊設計為使用我們獨特的簇絨和單針技術清洗，或作為拉鍊可拆卸蓋。 注意：我們建議您不要機洗內墊或泡沫襯墊。 這些只能手洗。
+            </p>
+        </div>
+        </div>
+        <div class="accordion">
+        <input type="radio" name="radio-a" id="check2">
+        <label class="accordion-label" for="check2">內裡使用PU泡棉？</label>
+        <div class="accordion-content">
+            <p>是的! 我們的內裡皆使用PU泡棉，這就是我們的睡墊睡久不塌陷的小秘密，內層使用高密度PU泡棉，具有良好的柔軟性，不同於一般棉花、化纖等填充物，使床墊更有支撐性，觸感有如記憶枕，柔軟有彈性。我們只使用優質、耐用的重質內飾級面料。 然而，這些織物的設計不能承受劇烈的咀嚼或挖掘行為。 它們的構造也不能承受幼犬鋒利的小牙齒的咀嚼。 我們建議一些新的小狗主人從低調的板條箱床或墊子開始，直到狗經過訓練並準備好搬到“設計師床”。</p>
+        </div>
+        </div>
+        <div class="accordion">
+        <input type="radio" name="radio-a" id="check3">
+        <label class="accordion-label" for="check3">有無提供保固？</label>
+        <div class="accordion-content">
+            <p>提供 7 天鑑賞期，請注意由於床墊為接觸型產品，為避免傳染疾病，開封後恕不受理更換事宜。請您購買前仔細測量商品尺寸，以免造成日後買賣糾紛。我們提供一年「泡棉不塌陷」保固，在保固內正常使用且非人為外力因素造成泡棉塌陷，將免費提供全新泡棉更換。  </p>
+        </div>
+        </div>
+    </div>
+
+    
 
 
 
@@ -728,8 +589,93 @@
         </div>
     </footer>
 
+    <script>
+        
+    (function($) {
+    var tabs =  $(".tabs li a");
+
+    tabs.click(function() {
+        var content = this.hash.replace('/','');
+        tabs.removeClass("active");
+        $(this).addClass("active");
+    $("#content").find('p').hide();
+    $(content).fadeIn(200);
+    });
+
+    })(jQuery);
 
 
+
+    function showLarge(e){
+    let small = e.target;
+    document.getElementById("large").src = small.src
+    }
+
+    function init(){
+        let imgs = 
+        document.querySelectorAll("#smallPanel img");
+        for(let i=0; i<imgs.length; i++){
+            imgs[i].onclick = showLarge;
+        }
+        
+    }
+    window.addEventListener("load", init, false);
+
+    
+    $("#patter01").click(function(){
+        $(".large").attr("src","./pic/dogbed/a01.png");
+    })
+    
+    $("#patter02").click(function(){
+        $(".large").attr("src","./pic/dogbed/a02.png");
+    })
+    $("#patter03").click(function(){
+        $(".large").attr("src","./pic/dogbed/a03.png");
+    })
+
+
+    $("#patterb01").click(function(){
+        $(".large").attr("src","./pic/dogbed/b01.png");
+    })
+    $("#patterb02").click(function(){
+        $(".large").attr("src","./pic/dogbed/b02.png");
+    })
+    $("#patterb03").click(function(){
+        $(".large").attr("src","./pic/dogbed/b03.png");
+    })
+
+    $("#patterc01").click(function(){
+        $(".large").attr("src","./pic/dogbed/c02.png");
+    })
+    $("#patterc02").click(function(){
+        $(".large").attr("src","./pic/dogbed/c01.png");
+    })
+    $("#patterc03").click(function(){
+        $(".large").attr("src","./pic/dogbed/c03.png");
+    })
+
+   
+    $('.image').click(function(){
+        $(this).addClass('focus')
+        $('.image').not(this).removeClass('focus')
+        })
+
+    $('.size').click(function(){
+        $(this).addClass('focus')
+        $('.size').not(this).removeClass('focus')
+        })
+
+    $('.size_icon').click(function(){
+        $('#table').show()
+    })
+
+    $('#close').click(function(){
+        $('#table').hide()
+    })
+
+     
+    
+    </script>
 
 </body>
 </html>
