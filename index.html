@@ -4,83 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index_cozydog</title>
+    <title>index_RWD</title>
     <link rel="stylesheet" href="./CSS/reset.css">
     <link rel="stylesheet" href="./CSS/coupon.css">
-    <style>
-        a{
-            text-decoration: none;
-        }
-
-        body{
-            background-color: rgba(234, 238, 239, 0.8);
-        }
-        
-        header{
-            width: 100%;
-            height: 700px;
-            overflow: hidden;
-            margin: auto;
-            background-image: url(./pic/index/header09.png);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position:center;
-        }
-
-        header nav{
-            width: 1200px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .main_nav .logo{
-            width: 107px;
-            height: 102px;
-            margin: 10px;
-        }
-
-        .main_nav .logo img{
-            width: 100%;
-        }
-
-        .main_nav{
-            display: flex;
-            align-items: center;
-        }
-
-        .main_nav .link{
-            margin: 50px 40px 10px 40px;
-        }
-
-       .main_nav .link a{
-            margin: 40px 40px 40px 15px;
-            color: rgba(0, 0, 0, .5);
-            text-decoration: none;
-            text-shadow:0px 4px 4px rgba(0, 0, 0, 0.1);
-            font-weight: 800;
-            letter-spacing: 3px;
-            font-size: 20px;
-        }
-       
-       nav{
-            display: flex;
-            margin: auto;
-        }
-
-        header .user_cart{
-            display: flex;
-            align-items: center;
-            margin: 50px 10px 10px 40px;
-
-        }
-
-       header .user_cart img{
-            width: 24px;
-            padding: 15px;
-        }
-
+    <link rel="stylesheet" href="./CSS/CSS.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"></link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"></link>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     
+    <style>
+        .banner{
+            width: 1200px;
+            height: 600px;
+            margin: auto;
+        }
+
+        .banner img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            overflow: hidden;
+        }
 
         .customize .options .options_bed{
             display: grid;
@@ -92,6 +38,9 @@
                                  "price_one price_two price_three";
             justify-content:space-evenly;
             align-items: center;
+            position: relative;
+            top:0px;
+            right: 0px;
         }
         .customize .options .options_bed .step_one{
             grid-area: step_one;
@@ -112,15 +61,16 @@
             width:100%;
             vertical-align: bottom;
         }
+    
         .customize .options .options_bed .step_one img{
             width: 180px;
         }   
 
         .customize .options .options_bed .bed_one .back{
             position: absolute;
-            top:980px;
-            right:955px;
-            width: 25%;
+            top: 51px;
+            right:787px;
+            width: 33%;
             vertical-align: bottom;
             opacity: 0%;
             transition: 0.5s ease-in-out;
@@ -128,9 +78,9 @@
 
         .customize .options .options_bed .bed_two .back{
             position: absolute;
-            top:996px;
-            right:587px;
-            width: 23%;
+            top: 65px;
+            right:420px;
+            width: 31%;
             vertical-align: bottom;
             opacity: 0%;
             transition: 0.5s ease-in-out;
@@ -138,9 +88,9 @@
 
         .customize .options .options_bed .bed_three .back{
             position: absolute;
-            top:980px;
-            right:220px;
-            width: 20%;
+            top:67px;
+            right:58px;
+            width: 25%;
             vertical-align: bottom;
             opacity: 0%;
             transition: 0.5s ease-in-out;
@@ -228,13 +178,25 @@
             margin-top: 70px;
         }
 
+        .customize .options .options_color .step_two img{
+            width:100%;
+        }
+
         .customize .options .options_color .colors{
-            margin: 5px 200px 100px 50px;
+            margin: 100px 0;
+            display: grid;
+            grid-auto-flow: column;
+            grid-template-columns: repeat(8,9rem);
         }
         .customize .options .options_color .colors img{
-            padding: 20px;
-            margin: 10px 10px 0px 25px;
-            }
+            width: 11rem ;
+            height: 11rem;
+            transition: transform 300ms;
+        }
+
+        .customize .options .options_color .colors img:hover{
+            transform: translateX(3rem);
+        }
 
         .customize .options .options_farbic .farbic_wrap{
             display: flex;
@@ -256,6 +218,50 @@
             flex-wrap: wrap;
             align-items: flex-end;
             margin-top: 80px;
+            position: relative;
+            top:0px;
+            right: 0px;  
+        }
+
+        .customize .options .options_farbic .farbic_wrap .farbic .farbic_pic .details{
+            background-color: rgba(217, 217, 217, 0.9);
+            border-radius: 20px;
+            width: 275x;
+            height: 100px;
+            position: absolute;
+            top:100px;
+            right: 80px;
+            transform: translateY(80%);
+            transition: ease-in-out 1s;
+            opacity: 0%; 
+        }
+
+        .customize .options .options_farbic .farbic_wrap .farbic .cool_pic:hover .details {
+            transform: translateY(30%);
+            transition: ease-in-out 1s;
+            opacity: 100%;
+        }
+
+        .customize .options .options_farbic .farbic_wrap .farbic .furry_pic:hover .details {
+            transform: translateY(30%);
+            transition: ease-in-out 1s;
+            opacity: 100%;
+        }
+
+        .customize .options .options_farbic .farbic_wrap .farbic .cotton_pic:hover .details {
+            transform: translateY(30%);
+            transition: ease-in-out 1s;
+            opacity: 100%;
+        }
+
+        .customize .options .options_farbic .farbic_wrap .farbic .farbic_pic .details p{
+            text-align: center;
+            padding: 20px;
+            font-weight: 500;
+            font-size: 16px;
+            letter-spacing: 2px;
+            color: gray;
+            line-height: 30px;
         }
 
         .customize .options .options_farbic .farbic_wrap .farbic .farbic_name{
@@ -270,34 +276,121 @@
 
         .customize .button_order{
             width: 1200px;
-            height: 100px;
             margin: auto;
-            position: relative;
-            top:0px;
-            right: 0px;
-        } 
-
-        .customize .button_order img{
-          position: absolute;
-          top:80px;
-          right:20px;
-        }   
-
-        .customize .button_order .button_order_now{
-            position: absolute;
-            top:70px;
-            right:60px;
+            display: flex;
+            justify-content: end;
         }
 
         .customize .button_order .button_order_now{
+            margin-top: 60px;
+            width: 120px;   
+            padding: 10px 30px;
+            background-color: rgba(207, 147, 142, 0.5);
+            border-radius: 30px;
+            box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+            animation: shake 2s infinite;
+        }
+
+        .customize .button_order .button_order_now a{
             color: rgba(0, 0, 0, .5);
             font-weight: 800;
-            letter-spacing: 3px;
+            letter-spacing: 5px;
             font-size: 25px;
-            text-shadow:0px 4px 4px rgba(0, 0, 0, 0.1);
-            /* position: absolute;
-            right:200px;
-            bottom: 10px; */
+        }
+
+        @keyframes shake{
+            10% { transform:scale(1.05) rotate(5deg)}
+            20% { transform:scale(1.05) rotate(-5deg)}
+            30% { transform:scale(1.05) rotate(5deg)}
+            40% { transform:none}
+        }
+
+        .about_toy{
+            display: flex;
+            width: 1200px;
+            margin: auto;
+            margin-top: 120px;
+            background-color: rgba(117, 161, 167, 0.08);
+            border-radius: 20px;
+        }
+
+        .about_toy .video{
+            width: 600px;
+        }
+
+        .about_toy .video video{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            vertical-align: middle;
+            border-radius: 20px 0px 0px 20px;
+            
+        }
+
+        .about_toy .txt_wrap .txt{
+            display: flex;
+            flex-direction: column;
+            width: 600px;
+            text-align: center;
+        }
+        .about_toy .txt_wrap .txt h3{
+            font-weight: 500;
+            font-size: 28px;
+            letter-spacing: 5px;
+            color: rgba(0, 0, 0, 0.8);
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            margin: 20px;
+        }
+
+        .about_toy .txt_wrap .txt p{
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 40px;
+            letter-spacing: 2px;
+            color: rgba(0, 0, 0, 0.76);
+            margin: 3px;
+        }
+
+
+        .about_toy .txt_wrap{
+            position: relative;
+            top:0px;
+            right: 0px;
+        }
+
+        .about_toy .txt_wrap .bg_img{
+            position: absolute;
+            width: 380px;
+            left: 120px;
+            top: 50px;
+        }
+
+        .about_toy .txt_wrap .bg_img img{
+            width: 100%;
+        }
+
+        .about_toy .more_toy{
+            width:200px;
+            margin: auto;
+            display: flex;
+            justify-content: center
+        }
+
+        .about_toy .more_toy .button_more{
+            margin-top: 60px;
+            width: 120px;   
+            padding: 10px 30px;
+            background-color: rgba(207, 147, 142, 0.5);
+            border-radius: 30px;
+            box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+            animation: shake 2s infinite;
+        }
+
+        .about_toy .more_toy .button_more a{
+            color: rgba(0, 0, 0, .5);
+            font-weight: 800;
+            letter-spacing: 5px;
+            font-size: 25px;
         }
 
         .about_toy{
@@ -326,18 +419,19 @@
             flex-direction: column;
             width: 600px;
             text-align: center;
+            margin-top: 10px;
         }
         .about_toy .txt_wrap .txt h3{
             font-weight: 500;
             font-size: 28px;
-            letter-spacing: 0.225em;
+            letter-spacing: 5px;
             color: rgba(0, 0, 0, 0.8);
             text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             margin: 20px;
         }
 
         .about_toy .txt_wrap .txt p{
-            font-weight: 400;
+            font-weight: 500;
             font-size: 20px;
             line-height: 40px;
             letter-spacing: 2px;
@@ -354,7 +448,7 @@
             position: absolute;
             width: 380px;
             left: 120px;
-            top: 50px;
+            top: 60px;
         }
 
         .about_toy .txt_wrap .bg_img img{
@@ -362,8 +456,14 @@
         }
 
         .about_toy .txt_wrap .button_more{
-            margin: 76px 5px 8px 180px;
-            width: 230px;
+            margin: 60px 0px 10px 0px;
+            margin-bottom: 60px;
+            width: 120px;   
+            padding: 10px 30px;
+            background-color: rgba(207, 147, 142, 0.5);
+            border-radius: 30px;
+            box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+            animation: shake 2s infinite;
         }
         .about_toy .txt_wrap .button_more .more{
             color: rgba(0, 0, 0, .5);
@@ -376,14 +476,12 @@
             height: 46px;
             left: 230px;
             top: 295px;
-     
         }
 
         .new_toy{
             width: 1200px;
-            height: 860px;
+            height: 800px;
             margin: auto;
-            margin-bottom: 70px;
             position: relative;
         }
 
@@ -401,14 +499,75 @@
             display: flex;
         }
 
+        .new_toy .toy_pic_wrap .pic{
+            transform: scale(1);
+            transition: 1s;
+        }
+
+        .new_toy .toy_pic_wrap .pic .button{
+            background-color:rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            width: 379px;
+            height: 329px;
+            position: relative;
+            bottom:332px;
+            right: 0px;
+            opacity: 0%;
+        }
+
+        .new_toy .toy_pic_wrap .toy_middle .button{
+            width: 370px;
+            height: 380px;
+            position: relative;
+            bottom:382px;
+            right: 0px;
+            opacity: 0%;
+        }
+
+        .new_toy .toy_pic_wrap .toy_left .button{
+            width: 280px;
+            height: 300px;
+            position: relative;
+            bottom:302px;
+            right: 0px;
+            opacity: 0%;
+        }
+
+        .new_toy .toy_pic_wrap .pic .button p{
+            margin: auto;
+            font-size: 18px;
+            width: 150px;
+            height: 40px;
+            background-color: rgba(255, 252, 252, 0.6);
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 20px;
+            letter-spacing: 2px;
+            color: rgba(0, 0, 0, 0.7);
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            top:160px;
+            right: 0px;
+        }
+
+        .new_toy .toy_pic_wrap .pic:hover{
+            transform: scale(1.2);
+            transition: 1s ;
+        }
+
+        .new_toy .toy_pic_wrap .pic:hover .button{
+            transition: 1s ;
+            opacity: 100%;
+        }
+
         .new_toy .toy_pic_wrap .toy_right{
             width: 379px;
             height: 329px;
             margin: auto;
             position: absolute;
-            left:90px;  
+            left:90px; 
         }
-
+   
         .new_toy .toy_pic_wrap .toy_middle{
             width: 370px;
             height: 380px;
@@ -418,6 +577,7 @@
             left: 450px;
             z-index: 2;
         }
+
         .new_toy .toy_pic_wrap .toy_left{
             width: 280px;
             height: 300px;
@@ -433,7 +593,53 @@
             object-fit: cover;
             border-radius:20px;
             filter: drop-shadow(3px 4px 7px rgba(0, 0, 0, 0.62));
+        } 
+
+        .feedback{
+            height: 650px;
+            margin: auto;
+            margin-bottom: 200px;
         }
+
+        .feedback h3{
+            font-weight: 500;
+            font-size: 28px;
+            letter-spacing: 5px;
+            color: rgba(0, 0, 0, 0.8);
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            text-align: center;
+            margin-bottom: 100px;
+        }
+
+        .owl-carousel{
+            height: 500px;
+            margin: auto;
+        } 
+
+        .owl-theme .item {
+            height: 400px;
+        }
+
+        .owl-carousel .item img{
+            width: 100%;
+            height: 65%;
+            object-fit: cover;
+            border-radius: 20px 20px 0px 0px;
+        }
+
+        .owl-carousel .item p{
+            width:100%;
+            height:25%;
+            text-align:center;
+            padding: 20px 0px 20px 0px;
+            background: rgba(117, 161, 167, 0.3);
+            border-radius: 0px 0px 20px 20px;
+            font-weight: 500;
+            font-size: 1rem;
+            line-height: 30px;
+            letter-spacing: 1px;
+            color: rgba(0, 0, 0, 0.5);
+        } 
 
         .contact_us{
             width: 1200px;
@@ -487,6 +693,11 @@
             width: 100%;
         }
 
+        .contact_us .warp{
+            margin:auto;
+            margin-right: 400px;
+        }
+
         .contact_us .txt_wrap{
             width:280px;
             margin:auto;
@@ -524,219 +735,672 @@
             vertical-align: bottom;
         }
 
-        footer{
-            width: 100%;
-            height: 165px;
-            background: rgba(117, 161, 167, 0.4);
+
+/* <------------------------media screen and (max-width: 768px)--------------------------------------> */
+        @media screen and (max-width: 768px){
+
+/* <----------------banner-----------------> */
+            .banner{
+                width:100%;
+                height: 100%;
+                margin: auto;
+            }
+
+            .banner img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                object-position: center;
+                overflow: hidden;
+            }
+
+/* <----------------steps-----------------> */
+            .customize{
+                width: 100%;
+            }
+
+            .customize .title{
+                font-size: 25px;
+                margin: 47px;
+            }
+
+            .customize .options{
+                width: 100%;
+            }
+
+            .customize .slogan{
+                font-weight: 400;
+                font-size: 14px;
+            }
+
+            .customize .options .options_bed{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .customize .options .options_bed .step_one{
+                width: 50%;
+
+            }
+
+            .options .options_bed .step_one .choose_bed{
+                font-size: 20px;
+                margin: 5px  -10px ;
+                width: 100px;
+            }
+
+            .options_bed .bed{
+                width: 100%;
+                position: relative;
+                top:0;
+                right:0;
+            }
+
+            .options_bed .bed img{
+                width: 100%;
+                vertical-align: middle;
+            } 
+
+            .customize .options .options_bed .bed .name_price{
+                font-size: 20px;
+            }
+
+            .customize .options .options_bed .bed_two img{
+                height: 200px;  
+                padding-bottom:10px;
+            }
+
+            .customize .options .options_bed .bed_one .back{
+                position: absolute;
+                top: 15px;
+                right:-22px;
+                width: 110%;
+                opacity: 0%;
+                transition: 2s 1s ease-out
+            }
+
+            
+            .customize .options .options_bed .bed_two .back{
+                position: absolute;
+                top: 0px;
+                right:26px;
+                width: 88%;
+                height: 83%;
+                opacity: 0%;
+                transition: 2s 1s ease-out;
+            }
+
+            .customize .options .options_bed .bed_three .back{
+                position: absolute;
+                top:20px;
+                right:25px;
+                width: 85%;
+                opacity: 0%;
+                transition: 2s 1s ease-out;
+            }
+
+            .options .options_bed .bed .back:active{
+                opacity: 100%;
+                transition: ease-in;
+            }
+
+            .customize .options .options_color{
+                width: 100%;
+            } 
+
+            .options .options_color .step_two{
+                width: 150px;
+                position: relative;
+                top:30px;
+                right:100px;
+            }
+
+            .options .options_color .step_two .choose_colors{
+                font-size: 20px;
+                margin: 0px 30px;
+                width: 100px;
+            }
+
+            .options .options_color .step_two img{
+               width: 100%;
+            
+            }
+
+            .customize .options .options_color .colors{
+                margin: 90px 0;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+            }
+
+            .customize .options .options_color .colors img{
+                width: 30%;
+                height: 20%;
+                padding: 10px 20px;
+            }
+
+            .customize .options .options_farbic{
+                width: 100%;
+            } 
+
+            .options .options_farbic .step_three{
+                width:180px;
+                position: relative;
+                top:30px;
+                left:100px;
+            }
+
+            .options .options_farbic .step_three .choose_farbic{
+                font-size: 20px;
+                margin: 0px -35px;
+                width: 100px;
+            }
+
+            .options .options_farbic .step_three img{
+               width: 100%;
+            }
+
+            .customize .options .options_farbic .farbic_wrap{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .customize .options .options_farbic .farbic_wrap .farbic .farbic_name{
+                font-size: 20px;
+            }
+
+            .customize .button_order{
+                width:90%;
+                margin-left: 10px;
+            }
+
+            .customize .button_order .button_order_now{
+                margin-top: 60px;
+                width: 110px;   
+                padding: 10px 20px;
+                background-color: rgba(207, 147, 142, 0.5);
+                border-radius: 30px;
+                box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+                animation: shake 2s infinite;
+            }
+
+            .customize .button_order .button_order_now a{
+                color: rgba(0, 0, 0, .5);
+                font-weight: 800;
+                letter-spacing: 5px;
+                font-size: 22px;
+                text-decoration: none;
+            }
+
+            .about_toy{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .about_toy .video{
+                width: 100%;
+            }
+
+            .about_toy .video video{
+                width: 100%;
+                border-radius: 20px 20px 0px 0px ;
+            }
+
+            .about_toy .txt_wrap{
+                width: 100%;
+                background-color: rgba(117, 161, 167, 0.08);
+                position: relative;
+                top:0px;
+                right: 0px;
+
+            }
+
+            .about_toy .txt_wrap .txt{
+                width:100%;
+                border-radius: 0px 0px 20px 0px ;
+            }
+
+            .about_toy .txt_wrap .bg_img {
+                width: 75%;
+                position: absolute;
+                top:80px;
+                left: 55px;
+            }
+
+            .about_toy .txt_wrap .bg_img img{
+                width: 100%;
+            }
+
+            .about_toy .txt_wrap .txt h3{
+                font-size: 28px;
+                margin: 40px auto 30px  auto;
+            }
+
+            .about_toy .txt_wrap .txt p{
+                font-size: 18px;
+            }
+
+            .about_toy .more_toy .button_more{
+                margin: 60px auto;
+                width: 110px;   
+                padding: 10px 20px;
+            }
+
+            .about_toy .more_toy .button_more a{
+                font-size: 22px;
+            }
+
+            .new_toy{
+                width: 100%;
+                height: 1150px;
+                margin: auto;
+                position: relative;
+                top:0px;
+                right: 0px;
+            }
+
+            .new_toy h3{
+              width: 300px;
+              margin: 60px auto;
+            }
+
+            .new_toy .toy_pic_wrap .pic{
+                position: static;
+                width: 280px;
+                height: 280px;
+                margin: 20px auto;   
+            }
+
+            .new_toy .toy_pic_wrap{
+                margin: auto;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+
+        
+            .new_toy .toy_pic_wrap .pic img{
+                width: 100%;
+            }
+
+/* <----------------feedback-----------------> */
+
+/* <----------------lineUs-----------------> */
+
+            .line_box{
+                width: 100%;    
+            }
+
+            .line_box .line{
+                margin: auto;
+                position: relative;
+                top:0px;
+                right: 0px;
+            }
+
+            .line .line_icon{
+                position: absolute;
+                bottom:25px;
+                left:300px;   
+            } 
+            
+/* <----------------contactUs-----------------> */
+            .contact_us{
+                width: 100%;
+                margin: auto;
+                position: relative;
+                top: 0;
+                right: 0;
+            }
+
+            .contact_us .contact_pic .bg_pic{
+                height: 350px;
+                position: relative;
+                top: 0;
+                right: 0;
+            }
+                
+            .contact_us .contact_pic .bg_pic img{
+                height: 100%;
+            }
+
+            .contact_us .contact_pic .discount_dog img{
+                width: 35%;
+                position: absolute;
+                top:20px;
+                left: 40px;
+            }
+
+            .contact_us .txt_wrap{
+                width: 40%;
+                position: absolute;
+                top:70px;
+                right:70px;
+            }
+            
+            .contact_us .txt_wrap p{
+                font-size: 18px;
+                padding-left: 10px;
+                padding-bottom: 25px;
+            }
+
+            .contact_us .txt_wrap .txt_one{
+                position: static;
+                margin: auto;
+            }
+
+            .contact_us .txt_wrap .txt_two{
+                position: static;
+                margin: auto;
+            }
+
+            .contact_us .txt_wrap .txt_three{
+                position: static;
+                margin: auto;
+            }
+
+            .contact_us .warp{
+                display: none;
+            }
         }
-
-        .footer{
-            width: 1200px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .footer_right{
-            width: 300px;
-            display: flex;
-            align-items: flex-end;
-        }
-
-        .footer .logo{
-            width: 107px;
-            height: 102px;
-            margin: 5px;
-        }
-
-        .footer img{
-            width: 100%;
-        }
-
-        .footer .footer_right .icon{
-           width: 140px;
-           margin: 5px;
-        }
-
-        .footer_middle{
-            width: 140px;
-            display: flex;
-            align-items: flex-end;
-        }
-
-        .footer_left .address{
-            font-weight: 400;
-            font-size: 15px;
-            line-height: 24px;
-            text-align: right;
-            letter-spacing: 0.175em;
-            color: #000000;
-            padding-top: 50px;
-        }
-
-
-    </style>
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="main_nav">
-                <a href="./index.html" class="logo">
-                    <img src="./pic/index/logo.png" alt=""> 
-                </a>
-                <div class="link">
-                    <a href="./bedpage.html">客製化睡墊</a>
-                    <a href="./products.html">寵物玩具</a>
-                    <a href="./aboutus.html">關於我們</a>
-                </div>
-            </div>
-            <div class="user_cart">
-                <a href="#"><img src="./pic/index/cart.png" alt=""></a>
-                <a href="./login.html"><img src="./pic/index/user.png" alt=""></a>
-            </div>
-        </nav>
- 
-    </header>
     
-    <main class="customize">
-        <h2 class="title">寵物睡墊領導品牌 <br> <span class="slogan">幫毛小孩打造專屬睡墊 </span></h2>
-        <div class="options">
-            <div class="options_bed">
-                <div class="step_one">
-                    <img src="./pic/index/txt_bg01.png" alt="">
-                    <p class="choose_bed">選擇床型</p>
-                </div>
-                <div class="bed bed_one">
-                    <img src="./pic/index/bed01.png" alt="" class="front">
-                    <img src="./pic/index/bed_dog01.png" alt="" class="back">
-                     <div class="name_price">
-                        <p class="name">圓形睡墊</p>
-                        <p class="price">NT$ 860</p>
-                     </div>
-                </div>
-                <div class="bed bed_two">
-                    <img src="./pic/index/bed02.png" alt="" class="front">
-                    <img src="./pic/index/bed_dog02.png" alt="" class="back">
-                    <div class="name_price">
-                        <p class="name">方形睡墊</p>
-                        <p class="price">NT$ 950</p>
-                     </div>
-                </div>
-                <div class="bed bed_three">
-                    <img src="./pic/index/bed03.png" alt="" class="front">
-                    <img src="./pic/index/bed_dog03.png" alt="" class="back">
-                    <div class="name_price">
-                        <p class="name">半月睡墊</p>
-                        <p class="price">NT$ 980</p>
-                     </div>
-                </div>
+    </style>
+
+</head>
+
+<body>
+<!-- <--------------header---------------> 
+<input type="checkbox" name="" id="menu_switch">
+<header>
+    <nav>
+        <!-- 選單/logo -->
+        <div class="main_nav">
+            <a href="./index.html" class="logo">
+                <img src="./pic/index/logo.png" alt=""> 
+            </a>
+            <div class="link">
+                <a href="./bedpage.html">客製化睡墊</a>
+                <a href="./products.html">寵物玩具</a>
+                <a href="./aboutus.html">關於我們</a>
             </div>
+        </div>
 
-            <div class="options_color">
-                <div class="step_two">
-                    <img src="./pic/index/txt_bg01.png" alt="">
-                    <p class="choose_colors">選擇顏色</p>
-                </div>
-                <div class="colors">
-                    <img src="./pic/index/color01.png" alt="">
-                    <img src="./pic/index/color02.png" alt="">
-                    <img src="./pic/index/color03.png" alt="">
-                    <img src="./pic/index/color04.png" alt="">
-                    <img src="./pic/index/color05.png" alt="">
-                </div>
+        <!-- 漢堡 -->
+        <label for="menu_switch" class="hb">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <!-- 會員/購物車 -->
+        <div class="user_cart">
+            <a href="#"><img src="./pic/index/cart.png" alt=""></a>
+            <a href="./login.html"><img src="./pic/index/user.png" alt=""></a>
+        </div> 
+    </nav>
+</header>
+
+<!-- <--------------banner---------------> 
+<script>
+    var i = 0;
+    var images = [];
+    var time = 3000;
+
+    images[0] = './pic/index/banner01.png';
+    images[1] = './pic/index/banner05.jpg';
+    images[2] = './pic/index/banner03.jpg';
+       
+    function changeImg(){
+        document.slide.src = images[i];
+
+        if(i < images.length - 1){
+            i++
+        }else{
+            i = 0;
+        }
+        setTimeout("changeImg()",time)
+    }
+    window.onload = changeImg
+</script>
+
+<section class="banner">
+    <img name="slide">
+</section>
+
+<!-- <--------------steps-----------------> 
+<main class="customize">
+    <h2 class="title">寵物睡墊領導品牌 <br> <span class="slogan">簡單三步驟—幫毛小孩打造專屬睡墊 </span></h2>
+    <div class="options">
+        <div class="options_bed">
+            <div class="step_one">
+                <img src="./pic/index/txt_bg01.png" alt="">
+                <p class="choose_bed">選擇床型</p>
             </div>
+            <div class="bed bed_one">
+                <img src="./pic/index/bed01.png" alt="" class="front">
+                <img src="./pic/index/bed_dog01.png" alt="" class="back">
+                 <div class="name_price">
+                    <p class="name">圓形睡墊</p>
+                    <p class="price">NT$ 860</p>
+                 </div>
+            </div>
+            <div class="bed bed_two">
+                <img src="./pic/index/bed02.png" alt="" class="front">
+                <img src="./pic/index/bed_dog02.png" alt="" class="back">
+                <div class="name_price">
+                    <p class="name">方形睡墊</p>
+                    <p class="price">NT$ 950</p>
+                 </div>
+            </div>
+            <div class="bed bed_three">
+                <img src="./pic/index/bed03.png" alt="" class="front">
+                <img src="./pic/index/bed_dog03.png" alt="" class="back">
+                <div class="name_price">
+                    <p class="name">半月睡墊</p>
+                    <p class="price">NT$ 980</p>
+                 </div>
+            </div>
+        </div>
 
-            <div class="options_farbic">
-                <div class="step_three">
-                    <img src="./pic/index/txt_bg01.png" alt="">
-                    <p class="choose_farbic">選擇布料</p>
-                </div>
+        <div class="options_color">
+            <div class="step_two">
+                <img src="./pic/index/txt_bg01.png" alt="">
+                <p class="choose_colors">選擇花色</p>
+            </div>
+            <div class="colors">
+                <img src="./pic/index/color003.png" alt="">
+                <img src="./pic/index/color001.png" alt="">
+                <img src="./pic/index/color002.png" alt="">
+                <img src="./pic/index/color003.png" alt="">
+                <img src="./pic/index/color001.png" alt="">
+                <img src="./pic/index/color002.png" alt="">
+                <img src="./pic/index/color003.png" alt="">
+                <img src="./pic/index/color001.png" alt="">
+            </div>
+        </div>
 
-                <div class="farbic_wrap">
-                    <div class="farbic">
-                        <div class="farbic_pic">
-                            <img src="./pic/index/bed_fabric01.png" alt="">
-                        </div>
-                        <div class="farbic_name">
-                            <p class="cool">涼感</p>
+        <div class="options_farbic">
+            <div class="step_three">
+                <img src="./pic/index/txt_bg01.png" alt="">
+                <p class="choose_farbic">選擇布料</p>
+            </div>
+            <div class="farbic_wrap">
+                <div class="farbic">
+                    <div class="farbic_pic cool_pic">
+                        <img src="./pic/index/bed_fabric01.png" alt="">
+                        <div class="details">
+                            <p>使用會吸收體溫的涼感素材<br>使毛小孩獲得涼爽的觸感</p>
                         </div>
                     </div>
-                    <div class="farbic">     
-                        <div class="farbic_pic">
-                            <img src="./pic/index/bed_fabric03.png" alt="">
-                        </div>
-                        <div class="farbic_name">
-                            <p class="furry">絨布</p>
+                    <div class="farbic_name">
+                        <p class="cool">涼感</p>
+                    </div>
+                </div>
+                <div class="farbic">     
+                    <div class="farbic_pic furry_pic ">
+                        <img src="./pic/index/bed_fabric03.png" alt="">
+                        <div class="details">
+                            <p>柔軟的布身貼體舒適<br>提供毛小孩保暖舒適的觸感</p>
                         </div>
                     </div>
-                    <div class="farbic">
-                        <div class="farbic_pic">
-                            <img src="./pic/index/bed_fabric02.png" alt="">
+                    <div class="farbic_name">
+                        <p class="furry">絨布</p>
+                    </div>
+                </div>
+                <div class="farbic">
+                    <div class="farbic_pic cotton_pic">
+                        <img src="./pic/index/bed_fabric02.png" alt="">
+                        <div class="details">
+                            <p>快速排乾的透氣材質<br>讓毛小孩感受細緻親膚的布料</p>
                         </div>
-                        <div class="farbic_name">
-                            <p class="cotton">棉布</p>
-                        </div>
+                    </div>
+                    <div class="farbic_name">
+                        <p class="cotton">棉布</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="button_order">   
-            <img src="./pic/index/txt_bg02.png" alt="">
-            <a href="./bedpage.html" class="button_order_now">馬上訂製</a>
+    </div>
+    <div class="button_order">   
+        <div class="button_order_now">
+            <a href="./bedpage.html">馬上訂製</a>
         </div>
-    </main>
+    </div>
+</main>
 
-     <section class="about_toy">
-        <div class="video">
-            <video autoplay="" muted="" loop="" src="./pic/index/play.mp4"></video>
+<!-- <-------------toyVideo-----------------> 
+<section class="about_toy">
+    <div class="video">
+        <video playsinline autoplay muted loop src="./pic/index/play.mp4"></video>
+    </div>
+
+    <div class="txt_wrap">
+        <div class="bg_img">
+            <img src="./pic/index/carouse_bg.png" alt="">
         </div>
-
-        <div class="txt_wrap">
-            <div class="bg_img">
-                <img src="./pic/index/carouse_bg.png" alt="">
-            </div>
-            <div class="txt">
-                <h3>
-                    毛小孩的玩樂時光
-                </h3>
-                <p>
-                    認識我們的藏食玩具<br>
-                    這款益智玩具非常適合幼犬發育<br>
-                    並讓狗狗擁有數小時的單人遊戲時間<br>
-                    狗狗在家發洩精力不無聊
-                </p>
+        <div class="txt">
+            <h3>
+                毛小孩的玩樂時光
+            </h3>
+            <p>
+                認識我們的藏食玩具<br>
+                這款益智玩具非常適合幼犬發育<br>
+                並讓狗狗擁有數小時的單人遊戲時間<br>
+                狗狗在家發洩精力不無聊
+            </p>
+            <div class="more_toy">
                 <div class="button_more">
-                    <img src="./pic/index/txt_bg02.png" alt="">
-                    
-                    <a href="./products.html" class="more">更多玩具</a>
-                  
+                    <a href="./products.html">更多玩具</a>
                 </div>
             </div>
-
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="new_toy">
+<!-- <-------------newToys-----------------> 
+<section class="new_toy">
+    <h3>
+        拔河玩具組新上市 
+    </h3>
 
-        <h3>
-            拔河玩具組新上市 
-        </h3>
+    <div class="toy_pic_wrap">
+        <div class="pic toy_right">
+            <img src="./pic/index/toy01.PNG" alt="">
+            <a href="#" class="button"> 
+                <p>查看更多</p> 
+            </a>   
+        </div>
+        <div class="pic toy_middle">
+            <img src="./pic/index/toy02.PNG" alt="">
+            <a href="#" class="button"> 
+                <p>查看更多</p> 
+            </a>   
+        </div>
+        <div class="pic toy_left">
+            <img src="./pic/index/toy03.PNG" alt="">
+            <a href="#" class="button"> 
+                <p>查看更多</p> 
+            </a>   
+        </div>
+    </div>
+</section>
 
-        <div class="toy_pic_wrap">
-            <div class=" pic toy_right">
-                <img src="./pic/index/toy01.PNG" alt="">
+<!-- <-------------feecback---------------->
+<section class="feedback">
+    <h3>
+        好評回饋
+    </h3>
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <img src="./pic/index/feedback01.jpg">
+                <p><span>@dog123456</span><br>商品寄送快速，包裝良好<br>是優質的商家值得購買，非常推薦!</p>
             </div>
-            <div class="pic toy_middle">
-                <img src="./pic/index/toy02.PNG" alt="">
+            <div class="item">
+                <img src="./pic/index/feedback03.jpg">
+                <p><span>@sleepingdog</span><br>品質很好，海綿感覺很紮實<br>不會像一般那種鬆鬆的感覺。</p>
             </div>
-            <div class="pic toy_left">
-                <img src="./pic/index/toy03.PNG" alt="">
+            <div class="item">
+                <img src="./pic/index/feedback04.jpg">
+                <p><span>@sleepingdog</span><br>出貨速度迅速，商品品質也很好<br>讚讚!非常推薦唷~</p>
+            </div>
+            <div class="item">
+                <img src="./pic/index/feedback06.jpg">
+                <p><span>@dog123456</span><br>商品寄送快速，包裝良好<br>是優質的商家值得購買，非常推薦!</p>
+            </div>
+            <div class="item">
+                <img src="./pic/index/feedback02.jfif">
+                <p><span>@sleepingdog</span><br>品質很好，海綿感覺很紮實<br>不會像一般那種鬆鬆的感覺。</p>
+            </div>
+            <div class="item">
+                <img src="./pic/index/feedback05.jfif">
+                <p><span>@sleepingdog</span><br>出貨速度迅速，商品品質也很好<br>讚讚!非常推薦唷~</p>
+            </div>
+            <div class="item">
+                <img src="./pic/index/feedback07.jpg">
+                <p><span>@dog123456</span><br>商品寄送快速，包裝良好<br>是優質的商家值得購買，非常推薦!</p>
+            </div>
+            <div class="item">
+                <img src="./pic/index/feedback08.PNG">
+                <p><span>@dog123456</span><br>商品寄送快速，包裝良好<br>是優質的商家值得購買，非常推薦!</p>
+            </div>
+            <div class="item">
+                <img src="./pic/index/feedback01.jpg">
+                <p><span>@dog123456</span><br>商品寄送快速，包裝良好<br>是優質的商家值得購買，非常推薦!</p>
+            </div>
+            <div class="item">
+                <img src="./pic/index/feedback03.jpg">
+                <p><span>@sleepingdog</span><br>品質很好，海綿感覺很紮實<br>不會像一般那種鬆鬆的感覺。</p>
+            </div>
+            <div class="item">
+                <img src="./pic/index/feedback04.jpg">
+                <p><span>@sleepingdog</span><br>出貨速度迅速，商品品質也很好<br>讚讚!非常推薦唷~</p>
             </div>
         </div>
-    </section>
+</section>
+<script>
+    $(".owl-carousel").owlCarousel({
+    loop: true, // 循環播放
+    margin: 10, // 外距 10px
+    nav: true, // 顯示點點
+    responsive: {
+            0: {
+            items: 1 // 螢幕大小為 0~600 顯示 1 個項目
+            },
+            600: {
+            items: 2 // 螢幕大小為 600~1000 顯示 3 個項目
+            },
+            1000: {
+            items: 4 // 螢幕大小為 1000 以上 顯示 5 個項目
+            }
+        }
+    });
+</script>
 
-
-    <div class="line_box">
+<!-- <-------------lineUs---------------->
+<div class="line_box">
         <div class="line">
             <h4 class="txt">
                 成為我們的LINE好友
@@ -745,18 +1409,24 @@
                 <img src="./pic/index/line.png" alt="">
             </div>
         </div>
+</div>
+
+<!-- <-------------ContactUs---------------->
+    
+<section class="contact_us">
+    <div class="contact_pic">
+        <div class="bg_pic">
+            <img src="./pic/index/footer_bg.png" alt="">
+        </div>
+        <div class="discount_dog">
+                <img class="dog" src="./pic/index/footer_dog.png" alt="">
+        </div>
     </div>
     
-    <section class="contact_us">
-        <div class="contact_pic">
-            <img src="./pic/index/footer_bg.png" alt="">
-            <img class="dog" src="./pic/index/footer_dog.png" alt="">
-        </div>
-        
-        <div class="txt_wrap">
+    <div class="txt_wrap">
             <p class="txt_one">
-                <img src="./pic/index/paw.png" alt="">
-                最新優惠消息
+            <img src="./pic/index/paw.png" alt="">
+            最新優惠消息
             </p>
             <p class="txt_two">
                 <img src="./pic/index/paw.png" alt="">
@@ -765,85 +1435,86 @@
             <p class="txt_three">
                 <img src="./pic/index/paw.png" alt="">
                 新品上架通知
-            </p>
-            <div class="warp" aria-labelledby="warp-label">
-                <span id="warp-label" class="warp__placeholder">
-                    新朋友加入即送100元折價券
+            </p> 
+    </div>
+        
+
+    <div class="warp" aria-labelledby="warp-label">
+        <span id="warp-label" class="warp__placeholder">
+                新朋友加入即送100元折價券
+        </span>
+            <span aria-role="presentation">
+                <span class="warp__0">
+                    新
                 </span>
-                <span aria-role="presentation">
-                    <span class="warp__0">
-                        新
-                    </span>
-                    <span class="warp__1">
-                        朋
-                    </span>
-                    <span class="warp__2">
-                        友
-                    </span>
-                    <span class="warp__3">
-                        加
-                    </span>
-                    <span class="warp__4">
-                        入
-                    </span>
-                    <span class="warp__5">
-                        即
-                    </span>
-                    <span class="warp__6">
-                        送
-                    </span>
-                    <span class="warp__7">
-                        1
-                    </span>
-                    <span class="warp__8">
-                        0
-                    </span>
-                    <span class="warp__9">
-                        0
-                    </span>
-                    <span class="warp__10">
-                        元
-                    </span>
-                    <span class="warp__11">
-                        折
-                    </span>
-                    <span class="warp__12">
-                        價
-                    </span>
-                    <span class="warp__13">
-                        券
-                    </span>
+                <span class="warp__1">
+                    朋
                 </span>
-            </div>
-      
-    </section>
+                <span class="warp__2">
+                    友
+                </span>
+                <span class="warp__3">
+                    加
+                </span>
+                <span class="warp__4">
+                    入
+                </span>
+                <span class="warp__5">
+                    即
+                </span>
+                <span class="warp__6">
+                    送
+                </span>
+                <span class="warp__7">
+                    1
+                </span>
+                <span class="warp__8">
+                    0
+                </span>
+                <span class="warp__9">
+                    0
+                </span>
+                <span class="warp__10">
+                    元
+                </span>
+                <span class="warp__11">
+                    折
+                </span>
+                <span class="warp__12">
+                    價
+                </span>
+                <span class="warp__13">
+                    券
+                </span>
+        </span>
+    </div>
+</section>
 
-    <footer>
-        <div class="footer">
-            <div class="footer_right">
-                <a href="./index.html" class="logo">
-                    <img src="./pic/index/logo.png" alt="">
-                </a>
-                <div class="icon">
-                   <img src="./pic/index/footer_icon.PNG" alt="">
-                </div>
-            </div>
-
-            <div class="footer_middle">
-                <img src="./pic/index/footer_card.PNG" alt="">
-            </div>
-
-            <div class="footer_left">
-                    <p class="address">
-                        cozy dog股份有限公司<br>
-                        客服專線/02-1234567<br>
-                        客服信箱/cozydog@gmail.com<br>
-                    </p> 
+<!-- <-------------footer---------------->
+<footer>
+    <div class="footer">
+        <div class="footer_right">
+            <a href="./index.html" class="logo">
+                <img src="./pic/index/logo.png" alt="">
+            </a>
+            <div class="icon">
+               <img src="./pic/index/footer_icon.PNG" alt="">
             </div>
         </div>
-    </footer>
 
+        <div class="footer_middle">
+            <img src="./pic/index/footer_card.PNG" alt="">
+        </div>
 
+        <div class="footer_left">
+                <p class="address">
+                    cozy dog股份有限公司<br>
+                    客服專線/02-1234567<br>
+                    客服信箱/cozydog@gmail.com<br>
+                </p> 
+        </div>
+    </div>
+</footer>
     
 </body>
 </html>

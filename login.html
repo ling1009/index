@@ -4,270 +4,171 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/reset.css">
+    <link rel="stylesheet" href="./CSS/CSS.css">
     <title>login</title>
 
     <style>
-          body{
-            background-color: rgba(234, 238, 239, 0.8);
-        }
 
-        header{
-            width: 100%;
-            margin: auto;
-            background-color:rgba(117, 161, 167, 0.4);
-        }
+        .login-html,:after,:before{box-sizing:border-box}
+        .clearfix:after,.clearfix:before{content:'';display:table}
+        .clearfix:after{clear:both;display:block}
+        a{color:inherit;text-decoration:none}
 
-        header nav{
-            width: 1200px;
-            display: flex;
-            justify-content: space-between;
-            background-color:rgba(117, 161, 167,);
-        }
-
-        .main_nav .logo{
-            width: 107px;
-            height: 102px;
-            margin: 10px;
-        }
-
-        .main_nav .logo img{
-            width: 100%;
-        }
-
-        .main_nav{
-            display: flex;
-            align-items: center;
-        }
-
-        .main_nav .link{
-            margin: 50px 40px 10px 40px;
-        }
-
-       .main_nav .link a{
-            margin: 40px 40px 40px 15px;
-            color: rgba(0, 0, 0, .5);
-            text-decoration: none;
-            text-shadow:0px 4px 4px rgba(0, 0, 0, 0.1);
-            font-weight: 800;
-            letter-spacing: 3px;
-            font-size: 20px;
-        }
-       
-        nav{
-            display: flex;
-            margin: auto;
-        }
-
-        header .user_cart{
-            display: flex;
-            align-items: center;
-            margin: 50px 10px 10px 40px;
-        }
-
-        header .user_cart img{
-            width: 24px;
-            padding: 15px;
-        }
-
-        main{
-            height: 700px;
-            background-image: url(./pic/login/login02.jpg);
-            background-position:right;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
-        }
-
-        main .login_page{
-            width: 1200px;
-            height: 500px;
-            margin: auto;
-            position: relative;
-            top:0px;
-            right: 0px;
-
-        }
-
-
-
-        .button{
-            width: 500px;
-            display: flex;
-
-        }
-
-         .button .buttons{
-            padding: 30px;
-            position: relative;
-            top:380px;
-            left:168px;
-            z-index: 2;
-         }
-
-
-        .button .txt{
-            width: 150px;
-            height: 20px;
-            background-color: rgba(207, 147, 142, 0.3);
+        .login-wrap{
+            width:80%;
+            margin:100px auto;
+            max-width:1000px;
+            min-height:670px;
+            position:relative;
+            background:url(./pic/login/05.jpg) no-repeat center;
             border-radius: 20px;
-            text-align: center;
-            line-height: 20px;
-            letter-spacing: 5px;
-            font-weight: 600;
-            font-size: 16px;
-            color: rgba(0, 0, 0, 0.5);
-            padding: 10px;
-        }
-
-        .container{
-            width: 550px;
-            height: 400px;
-            background-color:rgba(234, 238, 239, 0.8);
             background-size: cover;
-            display: flex;
-            flex-direction: row-reverse;
-            border-radius: 30px;
-            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-            position: absolute;
-            bottom: 120px;
-            right: 640px;
+            box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+        }
+        .login-html{
+            width:100%;
+            height:100%;
+            position:absolute;
+            padding:90px 70px 50px 70px;
+            background: rgba(117, 161, 167, 0.6);
+            border-radius: 20px;
+        }
+        .login-html .sign-in-htm,
+        .login-html .sign-up-htm{
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            position:absolute;
+            transform:rotateY(180deg);
+            backface-visibility:hidden;
+            transition:all .4s linear;
+        }
+        .login-html .sign-in,
+        .login-html .sign-up,
+        .login-form .group .check{
+            display:none;
+        }
+        .login-html .tab,
+        .login-form .group .label,
+        .login-form .group .button{
+            text-transform:uppercase;
+        }
+        .login-html .tab{
+            font-size:22px;
+            letter-spacing: 2px;
+            margin-right:15px;
+            padding-bottom:5px;
+            margin:0 15px 10px 0;
+            display:inline-block;
+            border-bottom:2px solid transparent;
+        }
+        .login-html .sign-in:checked + .tab,
+        .login-html .sign-up:checked + .tab{
+            color:#fff;
+            border-color:black;
+        }
+        .login-form{
+            min-height:345px;
+            position:relative;
+            perspective:1000px;
+            transform-style:preserve-3d;
+        }
+        .login-form .group{
+            margin-bottom:15px;
+        }
+        .login-form .group .label,
+        .login-form .group .input,
+        .login-form .group .button{
+            width:100%;
+            color:#fff;
+            display:block;
+            box-sizing: border-box;
+        }
+        .login-form .group .input,
+        .login-form .group .button{
+            border:none;
+            padding:15px 20px;
+            border-radius:25px;
+            background:rgba(255,255,255,.1);
         }
 
-        .container .right,.left{
-            width: 300px;
-            /* height: 300px; */
-            text-align: center;
-            margin: 15px 0px;
-        }
-
-        .container .left .username,.password{
-           width: 200px;
-           line-height: 30px;
-           background:none;
-           border: 1px solid lightslategray; 
-           margin: 20px;
-        }
-
-        .container .left button{
-           width: 90px;
-           background:none;
-           border: 1px solid lightslategray; 
-           border-radius: 10px;
-        }
-        
-        .container .left .button_row{
-            width: 200px;
-            margin: auto;
-            margin-top: 15px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .container .left .icon_wrap{
-            width: 200px;
-            margin: auto;
-            margin-top: 25px;
-            display: flex;
-            justify-content: space-between
-        }
-
-        .container .left .icon_wrap .icon{
-            width: 40px;
-            height: 40px;
-        }
-
-        .container .left .icon_wrap img{
-            width: 100%;
-        }
-
-        .container .right .txt_wrap h3{
-            text-align: center;
-            font-size: 24px;
+        .login-form .group .label{
+            color:gray;
             font-weight: 700;
-            color: rgba(0, 0, 0, 0.6);
-            text-shadow:0px 4px 4px rgba(0, 0, 0, 0.1);
-            letter-spacing: 5px;
+            font-size:16px;
+            padding: 10px;
+            letter-spacing: 2px;
+        }
+        .login-form .group .button{
+            margin-top: 40px;
+            background:rgba(207, 147, 142);
+        }
+        .login-form .group label .icon{
+            width:15px;
+            height:15px;
+            border-radius:2px;
+            position:relative;
+            display:inline-block;
+            background:rgba(255,255,255,.1);
+        }
+        .login-form .group label .icon:before,
+        .login-form .group label .icon:after{
+            content:'';
+            width:10px;
+            height:2px;
+            background:#fff;
+            position:absolute;
+            transition:all .2s ease-in-out 0s;
+        }
+        .login-form .group label .icon:before{
+            left:3px;
+            width:5px;
+            bottom:6px;
+            transform:scale(0) rotate(0);
+        }
+        .login-form .group label .icon:after{
+            top:6px;
+            right:0;
+            transform:scale(0) rotate(0);
+        }
+        .login-form .group .check:checked + label{
+            color:#fff;
+        }
+        .login-form .group .check:checked + label .icon{
+            background:rgba(207, 147, 142);
+        }
+        .login-form .group .check:checked + label .icon:before{
+            transform:scale(1) rotate(45deg);
+        }
+        .login-form .group .check:checked + label .icon:after{
+            transform:scale(1) rotate(-45deg);
+        }
+        .login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm{
+            transform:rotate(0);
+        }
+        .login-html .sign-up:checked + .tab + .login-form .sign-up-htm{
+            transform:rotate(0);
         }
 
-        .container .right .txt_wrap h4{
-            text-align: center;
-            font-size: 18px;
-            font-weight: 500;
-            color: rgba(0, 0, 0, 0.6);
-            text-shadow:0px 4px 4px rgba(0, 0, 0, 0.1);
-            letter-spacing: 5px;
-            line-height: 40px;
+        .hr{
+            height:2px;
+            margin:60px 0 50px 0;
+            background:rgba(255,255,255,.2);
         }
-
-        .container .right .txt_wrap .pic_box{
-            width: 300px;
+        .foot-lnk{
+            text-align:center;
         }
-
-        .container .right .txt_wrap .pic_box img{
-            width: 100%;
-        }
-
-        footer{
-            width: 100%;
-            height: 165px;
-            background: rgba(117, 161, 167, 0.4);
-        }
-
-        .footer{
-            width: 1200px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .footer_right{
-            width: 300px;
-            display: flex;
-            align-items: flex-end;
-        }
-
-        .footer .logo{
-            width: 107px;
-            height: 102px;
-            margin: 5px;
-        }
-
-        .footer img{
-            width: 100%;
-        }
-
-        .footer .footer_right .icon{
-           width: 140px;
-           margin: 5px;
-        }
-
-        .footer_middle{
-            width: 140px;
-            display: flex;
-            align-items: flex-end;
-        }
-
-        .footer_left .address{
-            font-weight: 400;
-            font-size: 15px;
-            line-height: 24px;
-            text-align: right;
-            letter-spacing: 0.175em;
-            color: #000000;
-            padding-top: 50px;
-        }
-
-
   
-           
-        
-
     </style>
 </head>
 <body>
 
+    <input type="checkbox" name="" id="menu_switch">
     <header>
         <nav>
+            <!-- 選單/logo -->
             <div class="main_nav">
                 <a href="./index.html" class="logo">
                     <img src="./pic/index/logo.png" alt=""> 
@@ -278,74 +179,75 @@
                     <a href="./aboutus.html">關於我們</a>
                 </div>
             </div>
+
+            <!-- 漢堡 -->
+            <label for="menu_switch" class="hb">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <!-- 會員/購物車 -->
             <div class="user_cart">
                 <a href="#"><img src="./pic/index/cart.png" alt=""></a>
                 <a href="./login.html"><img src="./pic/index/user.png" alt=""></a>
-            </div>
+            </div> 
         </nav>
     </header>
 
-    <main>  
-        <div class="button">
-            <!-- <div class="buttons">
-                <p class="txt login">會員登入</p>
-            </div> -->
 
-            <div class="buttons">
-                <p class="txt register">會員註冊</p>
-            </div>
-        </div>
-
-        <!-- 小頁面 -->
-        <div class="login_page">
-            <div class="container">
-                <div class="right">
-                    <div class="txt_wrap">
-                        <h3>
-                            會員登入
-                        </h3>
-                        <h4>
-                            歡迎回來<br>
-                            萬聖節主題玩具88折
-                        </h4>
-                      
-                        <div class="pic_box">
-                            <img src="./pic/login/halloween_toy.png" alt="">
-                        </div>
+    <div class="login-wrap">
+        <div class="login-html">
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">登入會員</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">註冊會員</label>
+            <div class="login-form">
+                <div class="sign-in-htm">
+                    <div class="group">
+                        <label for="user" class="label">帳號</label>
+                        <input id="user" type="text" class="input">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">密碼</label>
+                        <input id="pass" type="password" class="input" data-type="password">
+                    </div>
+                    <div class="group">
+                        <input id="check" type="checkbox" class="check" checked>
+                        <label for="check"><span class="icon"></span>記住帳號</label>
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button" value="Sign In">
+                    </div>
+                    <div class="hr"></div>
+                    <div class="foot-lnk">
+                        <a href="#forgot">忘記密碼?</a>
                     </div>
                 </div>
-
-                <div class="left">
-                    <div class="帳號">
-                        <input type="text" placeholder="帳號" class="username">
+                <div class="sign-up-htm">
+                    <div class="group">
+                        <label for="user" class="label">帳號</label>
+                        <input id="user" type="text" class="input">
                     </div>
-
-                    <div class="密碼">
-                        <input type="password" placeholder="密碼" class="password">
+                    <div class="group">
+                        <label for="pass" class="label">密碼</label>
+                        <input id="pass" type="password" class="input" data-type="password">
                     </div>
-
-
-                    <div class="button_row">
-                        <button class="reset">
-                            <p>忘記密碼</p>
-                        </button>
-                        <button class="login">
-                            <p>登入</p>
-                        </button>
+                    <div class="group">
+                        <label for="pass" class="label">確認密碼</label>
+                        <input id="pass" type="password" class="input" data-type="password">
                     </div>
-
-                    <div class="icon_wrap">
-                        <div class="icon"><img src="./pic/login/fb_icon.png" alt=""></div>
-                        <div class="icon"><img src="./pic/login/line_icon.png" alt=""></div>
-                        <div class="icon"><img src="./pic/login/google_icon.png" alt=""></div>
+                    <div class="group">
+                        <label for="pass" class="label">電子信箱</label>
+                        <input id="pass" type="text" class="input">
                     </div>
-                    
+                    <div class="group">
+                        <input type="submit" class="button" value="Sign Up">
+                    </div>
+                    <div class="hr"></div>
+
                 </div>
             </div>
-
         </div>
-
-    </main>
+    </div>
 
     <footer>
         <div class="footer">

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aboutus</title>
+    <link rel="stylesheet" href="./CSS/reset.css">
+    <link rel="stylesheet" href="./CSS/CSS.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+
+
+<script>
+        function animateFrom(elem, direction) {
+      direction = direction || 1;
+      var x = 0,
+          y = direction * 100;
+      if(elem.classList.contains("gs_reveal_fromLeft")) {
+        x = -100;
+        y = 0;
+      } else if (elem.classList.contains("gs_reveal_fromRight")) {
+        x = 100;
+        y = 0;
+      }
+      elem.style.transform = "translate(" + x + "px, " + y + "px)";
+      elem.style.opacity = "0";
+      gsap.fromTo(elem, {x: x, y: y, autoAlpha: 0}, {
+        duration: 1.25, 
+        x: 0,
+        y: 0, 
+        autoAlpha: 1, 
+        ease: "expo", 
+        overwrite: "auto"
+      });
+    }
+    
+    function hide(elem) {
+      gsap.set(elem, {autoAlpha: 0});
+    }
+    
+    document.addEventListener("DOMContentLoaded", function() {
+      gsap.registerPlugin(ScrollTrigger);
+      
+      gsap.utils.toArray(".gs_reveal").forEach(function(elem) {
+        hide(elem); // assure that the element is hidden when scrolled into view
+        
+        ScrollTrigger.create({
+          trigger: elem,
+          onEnter: function() { animateFrom(elem) }, 
+          onEnterBack: function() { animateFrom(elem, -1) },
+          onLeave: function() { hide(elem) } // assure that the element is hidden when scrolled into view
+        });
+      });
+    });
+</script>
+
+<style>
+    
+/* <-------------banner-----------------> */
+
+    .banner{
+        width: 100%;
+        height: 700px;
+        background-image: url(./pic/aboutus/bg_banner02.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        margin: auto;    
+    }
+
+    .banner .dog_banner{
+        width: 350px;
+        position: relative; 
+    }
+
+    .banner .dog_banner img{
+        width: 100%;
+        position: absolute;
+        top:40px;
+        left: 900px;
+    }
+
+    .banner .txt{
+        width: 500px;
+        margin-left: 210px;
+        padding: 130px;
+        border: 1px ;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+    
+    .banner .txt h4{
+        font-weight: 600;
+        font-size: 50px;
+        text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+        line-height: 45px;
+        letter-spacing: 0.125em;
+        color: white;
+        /* color: rgba(0, 0, 0, 0.5); */
+        text-align: left;
+        margin: 20px;
+    }
+
+    .banner .txt p{
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 45px;
+        letter-spacing: 0.125em;
+        color: rgba(0, 0, 0, 0.5);
+        text-align: left;
+        /* text-indent: 2em; */
+        margin: 20px;
+    }
+
+/* <-------------aboutUs-----------------> */
+    .ipsType_right {
+        text-align: right;
+    }
+    .ipsType_center {
+        text-align: center;
+    }
+    .cInnerContent {
+        max-width: 1240px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .ipsSpacer_bottom_double {
+        margin-bottom: 30px;
+    }
+    .ipsGrid {
+        display: inline-block;
+        display: -ms-flexbox;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .ipsGrid::before, .ipsGrid::after {
+        display: table;
+        content: "";
+        line-height: 0;
+    }
+    .ipsGrid > [class*="ipsGrid_span"] {
+        display: block;
+        width: 100%;
+        min-height: 30px;
+        box-sizing: border-box;
+    }
+    .ipsGrid > .ipsGrid_span5 {
+        width: 40.42553191489362%;
+    }
+    .ipsGrid > .ipsGrid_span7 {
+        width: 57.44680851063829%;
+    }
+    .ipsGrid > [class*="ipsGrid_span"] {
+        float: left;
+        margin-left: 2%;
+    }
+    .ipsGrid > [class*="ipsGrid_span"]:first-child {
+        margin-left: 0;
+    }
+    .feature {
+        display: flex;
+        align-items: center;
+    }
+    .card {
+        margin-bottom: 30px;
+        border: 1px solid #cccccc;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 1px 1px 5px 1px #CCCCCC;
+    }
+    
+    .featured-image-container .card {
+        padding: 10px;
+        height: 0;
+        padding-bottom: calc(85% - 5px);
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    h2.heading_large {
+        font-size: 1.6em;
+        padding: 20px;
+        font-weight: 600;
+        color: rgba(0, 0, 0, 0.6);
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .header-section {
+        margin: 200px auto;
+    }
+
+    .cInnerContent p{
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 35px;
+        letter-spacing: 2px;
+        color: rgba(0, 0, 0, 0.6);
+        margin: 3px;
+    }
+
+    .header-section {
+        margin: 200px auto;
+    }
+
+/* <--------------contactUs----------------> */
+
+ .wrap{
+    max-width: 1200px;;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 100px auto ;
+ }
+
+ .wrap .title{
+    width: 1200px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.6);
+    letter-spacing: 5px;
+    line-height: 100px;
+}
+
+ .form{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: auto;
+    margin: 20px;
+ }
+
+ .form input,textarea{
+    padding: 20px;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,3);
+    background: none;
+ }
+
+.form .btn{
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 5px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.form .btn::after {
+    content: "";
+    background-color: rgba(207, 147, 142, 0.67);
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+}
+
+.form .btn:hover::after {
+  top: 0px;
+  left: 0px;
+}
+
+.form_pic{
+    width: 500px;
+    height: 450px;   
+    margin: 20px;
+}
+
+.form_pic img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+}
+
+
+/* <------------------------media screen and (max-width: 768px)--------------------------------------> */
+@media screen and (max-width: 768px){
+
+/* <--------------banner--------------->  */
+    .banner{
+        width: 100%;
+        height: 600px;
+        background-size: cover;
+        display: flex;
+        flex-direction: row-reverse;
+        margin-bottom: 50px;
+
+    }
+
+    .banner .dog_banner{
+        width: 60%;
+        height: 200px;
+        margin-top: 80px;
+    }
+
+    .banner .dog_banner img{
+        width: 100%;
+        position: static;
+    }
+
+    .banner .txt{
+        width: 100%;
+        height: auto;
+        margin: auto;
+        margin-top: 50px;
+        padding: 10px;
+    }
+
+    .banner .txt p{
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 35px;
+    }
+
+    .banner .txt h4{
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 35px;
+    }
+
+/* <--------------aboutUs--------------->  */
+    .cInnerContent p{
+        font-size: .8rem;
+        line-height: 30px;
+    }
+
+/* <--------------contactUs-------------->  */
+
+.wrap{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 100px auto ;
+ }
+
+ .wrap .title{
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.6);
+    letter-spacing: 5px;
+    line-height: 100px;
+}
+
+    }
+</style>
+
+
+
+</head>
+<body>
+<!-- <--------------header---------------> 
+    <input type="checkbox" name="" id="menu_switch">
+    <header>
+        <nav>
+            <!-- 選單/logo -->
+            <div class="main_nav">
+                <a href="./index.html" class="logo">
+                    <img src="./pic/index/logo.png" alt=""> 
+                </a>
+                <div class="link">
+                    <a href="./bedpage.html">客製化睡墊</a>
+                    <a href="./products.html">寵物玩具</a>
+                    <a href="./aboutus.html">關於我們</a>
+                </div>
+            </div>
+
+            <!-- 漢堡 -->
+            <label for="menu_switch" class="hb">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <!-- 會員/購物車 -->
+            <div class="user_cart">
+                <a href="#"><img src="./pic/index/cart.png" alt=""></a>
+                <a href="./login.html"><img src="./pic/index/user.png" alt=""></a>
+            </div> 
+        </nav>
+    </header>
+
+    <section class="banner">
+        <div class="dog_banner">
+            <img src="./pic/aboutus/dog_banner.png" alt="">
+        </div>
+        
+        <article class="txt">
+            <h4>cozy dog</h4>
+            <p>
+                cozy dog成立於2022年，我們致力於給予毛小孩最好的睡眠品質以及休息環境，
+                依據每個不同的毛小孩的習性及各種體型提供客製化的設計產品服務，不同的花色選擇也能滿足主人的喜好
+                ，讓毛小孩不論是休憩、睡眠、玩耍，都能獲得最大的舒適感。  
+            </p>
+        </article>
+    </section>
+  
+    <div class="cInnerContent">
+    <div class="features">
+        <div class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone">
+        <div class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromLeft">
+            <div class="card">
+            <img  src="./pic/aboutus/feature03.jpg" alt="">
+            </div>
+        </div>
+    <div class="ipsGrid_span7 ipsType_left">
+            <h2 class="heading_large gs_reveal">我們的品牌理念</h2>
+            <p class="gs_reveal">我們相信我們產品的設計、功能和安全性的重要性，並繼續在這些領域進行投資我們希望每個人都有機會通過提供與現代寵物父母產生共鳴的價格實惠的產品來加入cozydog的樂趣。 我們通過降低成本和經營精益公司來做到這一點 我們聘請真正體現公司價值觀並相信我們願景的團隊成員</p>
+        </div>
+        </div>
+        <div class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone">
+        <div class="ipsGrid_span7 ipsType_right">
+            <h2 class="heading_large gs_reveal">給毛寶貝最好的</h2>
+            <p class="gs_reveal">從愛狗的辦公室到我們小狗的生日派對，我們不只是愛狗。 我們認為他們是我們的家人。 這就是我們如何能夠將這種關心和投入投入到我們的玩具創作中。 它們的設計不僅考慮到生活方式，而且是市場上最高質量和最安全的產品。 自己的狗是我們質量保證的第一道防線。 </p>
+    </div>
+        <div class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromRight">
+            <div class="card">
+            <img  src="./pic/aboutus/feature02.jpg" alt="">
+            </div>
+        </div>
+        </div>
+        <div class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone">
+        <div class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromLeft">
+            <div class="card">
+            <img src="./pic/aboutus/feature01.jpg" alt="">
+            </div>
+        </div>
+        <div class="ipsGrid_span7 ipsType_left">
+            <h2 class="heading_large gs_reveal">關於材質布料</h2>
+            <p class="gs_reveal">夢幻，柔軟，奢華，人造毛皮。 耐用且可水洗。 纖維不會起球或脫落。 任何想要為寵物提供極致奢華的寵物主人的必備品。 我們的人造羊皮的自然紋理與真正的羊毛皮一樣具有奢華的手感。 耐用、可水洗的內飾級面料。 為您的家增添時尚、時尚、寵物友好型。</p>
+        </div>
+        </div>
+        <div class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone">
+        <div class="ipsGrid_span7 ipsType_right">
+            <h2 class="heading_large gs_reveal">優質的舒壓床墊</h2>
+            <p class="gs_reveal">我們的許多床設計都結合使用不同的纖維填充物和泡沫，以提供終極的支撐和舒適度。高記憶聚酯纖維填充物：用於我們的床外墊和枕頭墊。 這種原生優質纖維具有更長的長絲長度和捲曲結構，可創造出卓越、持久的蓬鬆度和柔軟度。與更便宜的替代品不同，這些纖維不會褪色或結塊，但在重複使用後可長時間保持其形狀。</p>
+        </div>
+        <div class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromRight">
+            <div class="card">
+            <img src="./pic/aboutus/feature04.jpg" alt="">
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <section class="contactUs">
+        <div class="wrap">
+            <div class="title">
+                <h2>聯絡我們</h2>
+            </div>
+            
+            <div class="form">
+                <input type="text" class="input" placeholder="姓名">
+                <input type="text" class="input" placeholder="電子信箱">
+                <input type="text" class="input" placeholder="連絡電話">
+                <textarea placeholder="Message"></textarea>
+                <div class="btn">送出</div>
+            </div>
+
+            <div class="form_pic">
+                    <img src="./pic/aboutus/bg01.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+
+    
+
+
+    <footer>
+        <div class="footer">
+            <div class="footer_right">
+                <a href="./index.html" class="logo">
+                    <img src="./pic/index/logo.png" alt=""> 
+                </a>
+                <div class="icon">
+                    <img src="./pic/index/footer_icon.PNG" alt="">
+                </div>
+            </div>
+
+            <div class="footer_middle">
+                <img src="./pic/index/footer_card.PNG" alt="">
+            </div>
+
+            <div class="footer_left">
+                    <p class="address">
+                        cozy dog股份有限公司<br>
+                        客服專線/02-1234567<br>
+                        客服信箱/cozydog@gmail.com<br>
+                    </p> 
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
