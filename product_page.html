@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/reset.css">
+    <link rel="stylesheet" href="./CSS/CSS.css">
+    <link rel="icon" href="./pic/index/logo.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <title>product_page</title>
+
+    <style>
+        .container{
+            background-color:rgba(255, 255, 255,0.4);
+            max-width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 30px;
+            margin: 100px auto;
+        }
+
+        .picWrap{
+            width: 660px;
+        }
+
+        .info{
+            width: 450px;
+        }
+
+        .mainPic{
+            width: 650px;
+            height: 450px;
+            margin: auto;
+        }
+
+        .mainPic img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .smallPics{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .smallPics .small{
+              cursor: pointer;
+        }
+
+        .smallPics img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .smallPics .small{
+            width: 155px;
+            height: 150px;
+            margin: 5px;
+        }
+
+        .container .info .title{
+            font-weight: 600;
+            font-size: 28px;
+            line-height: 30px;
+            letter-spacing: 0.125em;
+            color: rgba(0, 0, 0, 0.7);
+            margin-bottom: 20px;
+        }
+
+        .container .info .text{
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 35px;
+            letter-spacing: 5px;
+            color: rgba(0, 0, 0, 0.8);
+            text-align: left; 
+        }
+
+        .container .info .star{
+           margin: 20px auto;
+        }
+        .container .info .text img{
+            vertical-align: bottom;
+        }
+
+        .container .info .buttonWrap{
+            font-weight: 600;
+            font-size: 30px;
+            line-height: 30px;
+            letter-spacing: 5px;
+            color: rgba(0, 0, 0, 0.8);
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 310px;
+        }
+
+        .container .info .buttonWrap span{
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 30px;
+            letter-spacing: 5px;
+            color: gray;
+            text-decoration: line-through;
+        }
+
+        .container .info .buttonWrap input{
+             width: 200px;
+            height: 30px;
+        }
+
+        .container .info .buttonWrap .qutybox{
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 30px;
+            letter-spacing: 5px;
+            color: rgba(0, 0, 0, 0.8);
+        }
+
+        .checkout{
+            width: 150px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 5px;
+            padding: 3px 20px;
+            margin-right:10px;
+            outline: 0;
+            border: 1px solid gray;
+            cursor: pointer;
+            position: relative;
+            display: inline-block;
+        }
+
+        .checkout::after {
+            content: "";
+            background-color: rgba(207, 147, 142, 0.67);
+            border-radius: 30px;
+            width: 100%;
+            z-index: 1;
+            position: absolute;
+            height: 100%;
+            top: 7px;
+            left: 7px;
+            transition: 0.2s;
+        }
+
+        .checkout:hover::after {
+            top: 0px;
+            left: 0px;
+        }
+
+        .container .info .buttonWrap .detail{
+            font-weight: lighter;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 3px;
+            color: rgba(0, 0, 0, 0.8);
+        }
+
+        .container .info .buttonWrap .shareIcon{
+           text-align: right;
+           margin-right: 45px;
+        }
+
+        .container .info .buttonWrap .shareIcon img{
+            width: 5%;
+        } 
+
+
+        .wrap .area{
+            max-width: 800px;
+            height: 700px;
+            margin:100px auto;
+            display: none;   
+        }
+
+        .wrap .txt{
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 40px;
+            letter-spacing: 5px;
+            color: rgba(0, 0, 0, 0.8);
+            text-align: center; 
+            height: 200px;
+            padding-top: 100px;
+        }
+
+
+/* <------------------------media screen and (max-width: 768px)--------------------------------------> */
+@media screen and (max-width: 768px){
+
+    .mainPic{
+        width: 330px;
+        height: 250px;
+    }
+
+    .checkout{
+        width: 100px;
+        font-size: 16px;
+        letter-spacing: 3px;
+    }
+
+
+    .wrap .area{
+        width: 100%;
+        height: auto;
+        margin:100px auto;
+        display: none;   
+    }
+
+    .wrap .txt{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 30px;
+        letter-spacing: 5px;
+        color: rgba(0, 0, 0, 0.8);
+        text-align: center; 
+        height: 160px;
+        padding-top: 100px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+    </style>
+</head>
+<body>
+<!-- <--------------header---------------> 
+ <input type="checkbox" name="" id="menu_switch">
+ <header>
+     <nav>
+         <!-- 選單/logo -->
+         <div class="main_nav">
+             <a href="./index.html" class="logo">
+                 <img src="./pic/index/logo.png" alt=""> 
+             </a>
+             <div class="link">
+                 <a href="./bedpage.html">客製化睡墊</a>
+                 <a href="./products.html">寵物玩具</a>
+                 <a href="./aboutus .html">關於我們</a>
+             </div>
+         </div>
+ 
+         <!-- 漢堡 -->
+         <label for="menu_switch" class="hb">
+             <span></span>
+             <span></span>
+             <span></span>
+         </label>
+ 
+         <!-- 會員/購物車 -->
+         <div class="user_cart">
+             <a href="#"><img src="./pic/index/cart.png" alt=""></a>
+             <a href="./login.html"><img src="./pic/index/user.png" alt=""></a>
+         </div> 
+     </nav>
+ </header>
+
+<div class="container">
+    <div class="picWrap">
+        <div class="mainPic">
+            <img id="large" src="./pic/product_page/01.PNG">
+        </div>
+        <div class="smallPics">
+            <div class="small" id="smallPanel">
+                <img src="./pic/product_page/02.PNG">
+            </div>
+            <div class="small" id="smallPanel">
+                <img src="./pic/product_page/03.PNG">
+            </div>
+            <div class="small" id="smallPanel">
+                <img src="./pic/product_page/04.PNG">
+            </div>
+            <div class="small" id="smallPanel">
+                 <img src="./pic/product_page/01.PNG"> 
+            </div>
+        </div>    
+    </div>
+
+    <div class="info">
+        <div class="title">營火造型狗狗藏食玩具</div>
+        <div class="star"><img src="./pic/product_page/stars.png" alt=""> (4)</div>
+        <p class="text">    
+            ★可愛造型啾啾聲玩具，提供寵物玩耍樂趣<br>
+            ★雙層縫線，交叉縫合確保耐用程度<br>
+            ★環保型填料由100％安全的再生塑料瓶製成<br>
+            ★通過測試，可機洗，不含有害的化學染料<br>
+            ★符合製造嬰兒和兒童產品的嚴格質量標準<br>
+        </p>
+
+        <div class="buttonWrap">
+            <div class="price"><img src="./pic/product_page/pricetag.png" alt=""> NT$ 425 <span>NT$500</span></div>
+
+            <div class="qutybox">
+                <label>數量</label>
+                <input type="number" class="quty" min="0" max="100" value="">
+            </div>
+
+            <div class="addtocart">    
+                <div class="checkout">加入購物車</div> 
+                <div class="checkout">前往結帳</div>
+            </div>
+            <div class="detail">
+            付款後，從備貨時間為 2 個工作天。（不包含假日）<br>
+            設計館提供統一發票或免用統一發票收據
+            </div>
+
+            <div class="shareIcon">   
+                <img src="./pic/product_page/share.png" alt=""> 
+                <img src="./pic/product_page/send.png" alt="">
+                <img src="./pic/product_page/pinterest.png" alt="">
+                <img src="./pic/product_page/facebook.png" alt="">
+                <img src="./pic/product_page/instagram.png" alt="">
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="wrap">
+    <img class="area" src="./pic/product_page/toy_a.PNG">
+    <p class="area txt">圍在篝火旁聽一些可怕的故事，或者吃一些美味的烤蔬菜。
+    追逐咀嚼和狩獵！把吱吱作響的玉米和皺巴巴的白菜塞進篝火裡，讓你的狗去尋找蔬菜玩具。篝火玩具也會起皺並配有吱吱聲。</p>
+    <img class="area" src="./pic/product_page/toy_b.PNG">
+    <p class="area txt">暖心篝火，火焰內藏特製發聲器，木柴內藏響紙，就算在寒冷的天氣中，也有暖暖的火光圍繞。
+        適合中、大型狗狗玩樂，手工製作的雙層縫線，交叉縫合確保耐用程度。</p>
+    <img class="area" src="./pic/product_page/toy_c.PNG">
+    <p class="area txt">
+        『善意提醒』<br>
+        保持寵物在您的視線裡玩耍，並時常觀察使用情況，可有效避免玩具損壞。
+        陪伴您的寵物一起玩耍，永遠是最適合的寵物玩具使用方式。
+</div>
+
+
+<!-- <--------------footer---------------> 
+ <footer>
+    <div class="footer">
+        <div class="footer_right">
+            <a href="./index.html" class="logo">
+                <img src="./pic/index/logo.png" alt=""> 
+            </a>
+            <div class="icon">
+                <img src="./pic/index/footer_icon.PNG" alt="">
+            </div>
+        </div>
+
+        <div class="footer_middle">
+            <img src="./pic/index/footer_card.PNG" alt="">
+        </div>
+
+        <div class="footer_left">
+                <p class="address">
+                    cozy dog股份有限公司<br>
+                    客服專線/02-1234567<br>
+                    客服信箱/cozydog@gmail.com<br>
+                </p> 
+        </div>
+    </div>
+</footer>
+
+<script>
+function showLarge(e){
+  let small = e.target;
+  document.getElementById("large").src = small.src
+}
+
+function init(){
+	let imgs = 
+	document.querySelectorAll("#smallPanel img");
+	for(let i=0; i<imgs.length; i++){
+		imgs[i].onclick = showLarge;
+	}
+	
+}
+
+window.addEventListener("load", init, false);
+
+
+
+$(function () {	
+            let showHeight = 200
+
+            $('.area').css({
+                display: 'flex',
+                opacity: 0,
+            })
+
+            $(window).on('scroll', function(){
+                $('.area').each(function(){
+                    let areaTop = $(this).offset().top
+
+                    if($(window).scrollTop() >= (areaTop + showHeight) - $(window).height()){
+                        $(this).stop().animate({
+                            opacity: 1,
+                        }, 500)
+                    }else{
+                        $(this).stop().animate({
+                            opacity: 0,
+                        }, 500)
+                    }
+                    
+                })
+
+            })
+		});	
+</script>
+
+</body>
+</html>

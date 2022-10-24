@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bedpage</title>
+    <title>客製化睡墊</title>
     <link rel="stylesheet" href="./CSS/reset.css">
     <link rel="stylesheet" href="./CSS/coupon.css">
     <link rel="stylesheet" href="./CSS/CSS.css">
+    <link rel="icon" href="./pic/index/logo.png">
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
    
     <style>
@@ -20,19 +21,25 @@
         top:0px;
         z-index: 3;
         display: none;
-        }
+    }
 
     table{
         margin: auto;
+        position: relative;
+        top:0px;
+        right:0px;
     }
 
     .table_wrap{
-        width: 750px;
-        height: 650px;
+        max-width: 750px;
+        max-height: 650px;
         margin: auto;
         margin-top: 50px;
         background-color: white;
         border-radius: 40px;
+        position: relative;
+        top:0;
+        right:0;
     }
 
 
@@ -56,9 +63,10 @@
     }
 
     button{
-        position: absolute;
-        top:80px;
-        right:430px;
+      position: absolute;
+      top:20px;
+      right:50px;
+      z-index: 3;
     }
 
 
@@ -71,8 +79,8 @@
     }
 
     .size_pic{
-        width:650px ;
-        height:300px ;
+        width:60% ;
+        height:40%;
         margin: auto;
     }
     
@@ -83,7 +91,7 @@
     }
 
     banner{
-        width: 1200px;
+        max-width: 1200px;
         height: 500px;
         margin-bottom: 80px;
         display: flex;
@@ -94,7 +102,7 @@
     }
 
     banner .txtbox{
-        width: 600px;
+        max-width: 600px;
         height: 180px;
         background-color: rgba(234, 238, 239, 0.8);
         margin: auto;
@@ -129,6 +137,7 @@
         margin: 57px;
         letter-spacing: 5px;
     }
+  
 
     .fqa{
         font-size: 30px;
@@ -171,14 +180,17 @@
     .wrap .one img{
         margin: 10px;
         vertical-align: middle;
+        cursor: pointer;
     }
     .wrap .two img{
         margin: 10px;
         vertical-align: middle;
+        cursor: pointer;
     }
     .wrap .three img{
         margin: 10px;
         vertical-align: middle;
+        cursor: pointer;
     }
 
     .group{
@@ -190,24 +202,26 @@
 
     span{
         width: 100%;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 25px;
         line-height: 70px;
         margin: auto;
         margin-left: 10px;
         letter-spacing: 10px;
-        color: rgba(0, 0, 0, 0.5);
+        color:  rgba(0, 0, 0, 0.6);
+        text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25); 
     }
 
     .size{
+        padding-left: 20px;
         font-weight: 800;
         font-size: 25px;
         line-height: 50px;
         margin: auto;
         margin-left: 10px;
-        letter-spacing: 10px;
-        color:  rgba(0, 0, 0, 0.76);
-        text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25); 
+        color: rgba(0, 0, 0, 0.5);
+        text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
     }
 
     .wrap .left  {
@@ -237,7 +251,8 @@
     }
 
     .focus{
-        outline: 5px dashed white;
+        outline: 4px solid white;
+        
     }
 
     .checkout{
@@ -283,6 +298,7 @@
         opacity: 0;
         z-index: -1;
     }
+
     .accordion-wrapper {
         border-radius: 8px;
         overflow: hidden;
@@ -297,6 +313,7 @@
         overflow: hidden;
         margin-bottom: 16px;
     }
+
     .accordion:last-child{
         margin-bottom: 0;
     }
@@ -347,6 +364,78 @@
         padding: 16px;
     }
 
+/* <------------------------media screen and (max-width: 768px)--------------------------------------> */
+    @media screen and (max-width: 768px){
+
+        banner{
+            width: 100%;
+        }
+
+        banner .txtbox{
+            width:70%;
+        }
+
+        banner .txtbox .banner_title{
+            font-size: 24px;
+        }
+
+        banner .txtbox .txt{
+            font-size: 14px;
+        }
+
+        .wrap .left .bedbox .bed{
+            width: 90%;
+            height: 60%;
+        }
+
+        .wrap .left .tabs li{
+            width: 30%;
+            height: 25%
+        }
+
+        .size_icon{
+            padding-left: 50px;
+        }
+
+        .size{
+            font-weight: 600;
+            font-size: 22px;
+        }
+
+        .checkout{
+            margin-bottom: 30px;
+            margin-left: 30px;
+            width: 115px;
+        }
+
+        span{
+            font-size: 22px;
+        }
+
+        .accordion-wrapper{
+            margin: 15px;
+        }
+
+        .accordion-content p{
+            font-size: 16px;
+            line-height: 30px;
+        }
+
+        .size_table table tbody td{
+            font-size: 14px;
+        }
+
+   
+    
+
+
+
+
+
+
+
+    }
+
      
     </style>
 </head>
@@ -384,11 +473,11 @@
 
 <!-- <--------------size_table---------------> 
     <div class="size_table" id="table">
-        <div class="table_wrap">
+        <div class="table_wrap">  
         <table>
+            <button id="close">x</button>
             <thead>
                 <th colspan="4">尺寸參考</th>
-                <button id="close">x</button>
             </thead>
             <tbody>
                 <tr>
@@ -439,6 +528,7 @@
             <div class="bedbox">
                 <div class="bed">
                     <img class="large" id="large" src="./pic/index/bed01.png">
+                   
                 </div>
             </div>
 
@@ -451,7 +541,7 @@
 
             <div id="content" class="content">
                 <p id="one" class="one"> 
-                    <span>1.選擇花色A</span><br>
+                    <span>1.選擇花色</span><br>
                     <img id="patter01" class="image" src="./pic/dogbed/patter01.png" alt="">
                     <img id="patter02" class="image" src="./pic/dogbed/patter02.png" alt="">
                     <img id="patter03" class="image" src="./pic/dogbed/patter03.png" alt="">
@@ -477,7 +567,7 @@
                 </p>
 
                 <p id="two" class="two"> 
-                    <span>1.選擇花色B</span><br>
+                    <span>1.選擇花色</span><br>
                     <img id="patterb01" class="image" src="./pic/dogbed/patter01.png" alt="">
                     <img id="patterb02" class="image"  src="./pic/dogbed/patter02.png" alt="">
                     <img id="patterb03" class="image" src="./pic/dogbed/patter03.png" alt="">
@@ -502,7 +592,7 @@
 
 
                 <p id="three" class="three">
-                    <span>1.選擇花色C</span><br>
+                    <span>1.選擇花色</span><br>
                     <img id="patterc01" class="image" src="./pic/dogbed/patterc01.png" alt="">
                     <img id="patterc02" class="image" src="./pic/dogbed/patter02.png" alt="">
                     <img id="patterc03" class="image" src="./pic/dogbed/patter03.png" alt="">
