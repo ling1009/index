@@ -19,7 +19,7 @@
             flex-wrap: wrap;
             justify-content: space-between;
             padding: 30px;
-            margin: 100px auto;
+            margin: 10px auto 100px auto;
         }
 
         .picWrap{
@@ -192,9 +192,44 @@
             padding-top: 100px;
         }
 
+        .breadcrumbList ol{
+            max-width: 1200px;
+            margin: 100px auto 0px 130px;
+            display: flex;
+        }
+
+        .breadcrumbList .breadcrumb a{
+            font-weight: 700;
+            color: rgba(0, 0, 0, 0.8);
+            letter-spacing: 3px;
+            padding: 0px  15px;
+        }
+
+        .divider{
+            max-width: 1200px;
+            font-size: 30px;
+            text-align: center;
+            font-weight: 700;
+            color: rgba(0, 0, 0, 0.6);
+            margin: auto;
+            padding: 5px;
+            letter-spacing: 5px;
+            line-height: 50px;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.6) ;
+        }
+
 
 /* <------------------------media screen and (max-width: 768px)--------------------------------------> */
 @media screen and (max-width: 768px){
+
+    .breadcrumbList ol{
+        margin: 100px auto 0px 0px;
+    }
+
+    .breadcrumbList .breadcrumb a{
+        font-weight: 600;
+        font-size: 9px;
+    }
 
     .mainPic{
         width: 330px;
@@ -219,28 +254,12 @@
         font-weight: 600;
         font-size: 16px;
         line-height: 30px;
-        letter-spacing: 5px;
+        letter-spacing: 4px;
         color: rgba(0, 0, 0, 0.8);
         text-align: center; 
-        height: 160px;
+        height: 180px;
         padding-top: 100px;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -282,6 +301,16 @@
          </div> 
      </nav>
  </header>
+
+ <div class="breadcrumbList">
+      <ol class="breadcrumb">
+        <li><a href="#">cozy dog</a></li>
+        <li> > </li>
+        <li><a href="#">寵物玩具</a></li>
+        <li> > </li>
+        <li><a href="#">營火造型狗狗藏食玩具</a></li>
+      </ol>
+</div>
 
 <div class="container">
     <div class="picWrap">
@@ -343,6 +372,10 @@
 
     </div>
 
+</div>
+
+<div class="divider">
+    商品介紹
 </div>
 
 

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./CSS/CSS.css">
     <link rel="icon" href="./pic/index/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"></link>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"></link>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"></link> -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     
@@ -612,6 +612,14 @@
             margin-bottom: 100px;
         }
 
+        .feedback .owl-prev{
+            display: none;
+        }
+
+        .feedback .owl-next{
+            display: none;
+        }
+
         .owl-carousel{
             height: 500px;
             margin: auto;
@@ -1134,7 +1142,7 @@
         <!-- 選單/logo -->
         <div class="main_nav">
             <a href="./index.html" class="logo">
-                <img src="./pic/index/logo.png" alt=""> 
+                <img src="./pic/index/logo.png" alt="logo"> 
             </a>
             <div class="link">
                 <a href="./bedpage.html">客製化睡墊</a>
@@ -1191,28 +1199,28 @@
     <div class="options">
         <div class="options_bed">
             <div class="step_one">
-                <img src="./pic/index/txt_bg01.png" alt="">
+                <img src="./pic/index/txt_bg01.png" alt="文字背景圖粉色">
                 <p class="choose_bed">選擇床型</p>
             </div>
             <div class="bed bed_one">
-                <img src="./pic/index/bed01.png" alt="" class="front">
-                <img src="./pic/index/bed_dog01.png" alt="" class="back">
+                <img src="./pic/index/bed01.png" alt="圓形睡墊" class="front">
+                <img src="./pic/index/bed_dog01.png" alt="圓形睡墊狗" class="back">
                  <div class="name_price">
                     <p class="name">圓形睡墊</p>
                     <p class="price">NT$ 860</p>
                  </div>
             </div>
             <div class="bed bed_two">
-                <img src="./pic/index/bed02.png" alt="" class="front">
-                <img src="./pic/index/bed_dog02.png" alt="" class="back">
+                <img src="./pic/index/bed02.png" alt="方形睡墊" class="front">
+                <img src="./pic/index/bed_dog02.png" alt="方形睡墊狗" class="back">
                 <div class="name_price">
                     <p class="name">方形睡墊</p>
                     <p class="price">NT$ 950</p>
                  </div>
             </div>
             <div class="bed bed_three">
-                <img src="./pic/index/bed03.png" alt="" class="front">
-                <img src="./pic/index/bed_dog03.png" alt="" class="back">
+                <img src="./pic/index/bed03.png" alt="半月睡墊" class="front">
+                <img src="./pic/index/bed_dog03.png" alt=半月睡墊狗" class="back">
                 <div class="name_price">
                     <p class="name">半月睡墊</p>
                     <p class="price">NT$ 980</p>
@@ -1222,30 +1230,30 @@
 
         <div class="options_color">
             <div class="step_two">
-                <img src="./pic/index/txt_bg01.png" alt="">
+                <img src="./pic/index/txt_bg01.png" alt="文字背景圖粉色">
                 <p class="choose_colors">選擇花色</p>
             </div>
             <div class="colors">
-                <img src="./pic/index/color003.png" alt="">
-                <img src="./pic/index/color001.png" alt="">
-                <img src="./pic/index/color002.png" alt="">
-                <img src="./pic/index/color003.png" alt="">
-                <img src="./pic/index/color001.png" alt="">
-                <img src="./pic/index/color002.png" alt="">
-                <img src="./pic/index/color003.png" alt="">
-                <img src="./pic/index/color001.png" alt="">
+                <img src="./pic/index/color003.png" alt="圖案">
+                <img src="./pic/index/color001.png" alt="圖案">
+                <img src="./pic/index/color002.png" alt="圖案">
+                <img src="./pic/index/color003.png" alt="圖案">
+                <img src="./pic/index/color001.png" alt="圖案">
+                <img src="./pic/index/color002.png" alt="圖案">
+                <img src="./pic/index/color003.png" alt="圖案">
+                <img src="./pic/index/color001.png" alt="圖案">
             </div>
         </div>
 
         <div class="options_farbic">
             <div class="step_three">
-                <img src="./pic/index/txt_bg01.png" alt="">
+                <img src="./pic/index/txt_bg01.png" alt="文字背景圖粉色">
                 <p class="choose_farbic">選擇布料</p>
             </div>
             <div class="farbic_wrap">
                 <div class="farbic">
                     <div class="farbic_pic cool_pic">
-                        <img src="./pic/index/bed_fabric01.png" alt="">
+                        <img src="./pic/index/bed_fabric01.png" alt="布料">
                         <div class="details">
                             <p>使用會吸收體溫的涼感素材<br>使毛小孩獲得涼爽的觸感</p>
                         </div>
@@ -1256,7 +1264,7 @@
                 </div>
                 <div class="farbic">     
                     <div class="farbic_pic furry_pic ">
-                        <img src="./pic/index/bed_fabric03.png" alt="">
+                        <img src="./pic/index/bed_fabric03.png" alt="布料">
                         <div class="details">
                             <p>柔軟的布身貼體舒適<br>提供毛小孩保暖舒適的觸感</p>
                         </div>
@@ -1267,7 +1275,7 @@
                 </div>
                 <div class="farbic">
                     <div class="farbic_pic cotton_pic">
-                        <img src="./pic/index/bed_fabric02.png" alt="">
+                        <img src="./pic/index/bed_fabric02.png" alt="布料">
                         <div class="details">
                             <p>快速排乾的透氣材質<br>讓毛小孩感受細緻親膚的布料</p>
                         </div>
@@ -1294,7 +1302,7 @@
 
     <div class="txt_wrap">
         <div class="bg_img">
-            <img src="./pic/index/carouse_bg.png" alt="">
+            <img src="./pic/index/carouse_bg.png" alt="文字背景圖粉色_大">
         </div>
         <div class="txt">
             <h3>
@@ -1323,19 +1331,19 @@
 
     <div class="toy_pic_wrap">
         <div class="pic toy_right">
-            <img src="./pic/index/toy01.PNG" alt="">
+            <img src="./pic/index/toy01.PNG" alt="玩具">
             <a href="./products.html" class="button"> 
                 <p>查看更多</p> 
             </a>   
         </div>
         <div class="pic toy_middle">
-            <img src="./pic/index/toy02.PNG" alt="">
+            <img src="./pic/index/toy02.PNG" alt="玩具">
             <a href="./products.html"  class="button"> 
                 <p>查看更多</p> 
             </a>   
         </div>
         <div class="pic toy_left">
-            <img src="./pic/index/toy03.PNG" alt="">
+            <img src="./pic/index/toy03.PNG" alt="玩具">
             <a href="./products.html"  class="button"> 
                 <p>查看更多</p> 
             </a>   
@@ -1350,65 +1358,67 @@
     </h3>
         <div class="owl-carousel owl-theme">
             <div class="item">
-                <img src="./pic/index/feedback01.jpg">
+                <img src="./pic/index/feedback01.jpg" alt="顧客好評圖">
                 <p><span>@dog123456</span><br>商品寄送快速，包裝良好<br>是優質的商家值得購買，非常推薦!</p>
             </div>
             <div class="item">
-                <img src="./pic/index/feedback03.jpg">
+                <img src="./pic/index/feedback03.jpg" alt="顧客好評圖">
                 <p><span>@sleepingdog</span><br>品質很好，海綿感覺很紮實<br>不會像一般那種鬆鬆的感覺。</p>
             </div>
             <div class="item">
-                <img src="./pic/index/feedback04.jpg">
+                <img src="./pic/index/feedback04.jpg" alt="顧客好評圖">
                 <p><span>@sleepingdog</span><br>出貨速度迅速，商品品質也很好<br>讚讚!非常推薦唷~</p>
             </div>
             <div class="item">
-                <img src="./pic/index/feedback06.jpg">
+                <img src="./pic/index/feedback06.jpg" alt="顧客好評圖">
                 <p><span>@dog123456</span><br>商品寄送快速，包裝良好<br>是優質的商家值得購買，非常推薦!</p>
             </div>
             <div class="item">
-                <img src="./pic/index/feedback02.jfif">
+                <img src="./pic/index/feedback02.jfif" alt="顧客好評圖">
                 <p><span>@sleepingdog</span><br>品質很好，海綿感覺很紮實<br>不會像一般那種鬆鬆的感覺。</p>
             </div>
             <div class="item">
-                <img src="./pic/index/feedback05.jfif">
+                <img src="./pic/index/feedback05.jfif" alt="顧客好評圖">
                 <p><span>@sleepingdog</span><br>出貨速度迅速，商品品質也很好<br>讚讚!非常推薦唷~</p>
             </div>
             <div class="item">
-                <img src="./pic/index/feedback07.jpg">
+                <img src="./pic/index/feedback07.jpg" alt="顧客好評圖">
                 <p><span>@dog123456</span><br>商品寄送快速，包裝良好<br>是優質的商家值得購買，非常推薦!</p>
             </div>
             <div class="item">
-                <img src="./pic/index/feedback08.PNG">
+                <img src="./pic/index/feedback08.PNG" alt="顧客好評圖">
                 <p><span>@dog123456</span><br>商品寄送快速，包裝良好<br>是優質的商家值得購買，非常推薦!</p>
             </div>
             <div class="item">
-                <img src="./pic/index/feedback01.jpg">
+                <img src="./pic/index/feedback01.jpg" alt="顧客好評圖">
                 <p><span>@dog123456</span><br>商品寄送快速，包裝良好<br>是優質的商家值得購買，非常推薦!</p>
             </div>
             <div class="item">
-                <img src="./pic/index/feedback03.jpg">
+                <img src="./pic/index/feedback03.jpg" alt="顧客好評圖">
                 <p><span>@sleepingdog</span><br>品質很好，海綿感覺很紮實<br>不會像一般那種鬆鬆的感覺。</p>
             </div>
             <div class="item">
-                <img src="./pic/index/feedback04.jpg">
+                <img src="./pic/index/feedback04.jpg" alt="顧客好評圖">
                 <p><span>@sleepingdog</span><br>出貨速度迅速，商品品質也很好<br>讚讚!非常推薦唷~</p>
             </div>
         </div>
 </section>
 <script>
     $(".owl-carousel").owlCarousel({
-    loop: true, // 循環播放
-    margin: 10, // 外距 10px
-    nav: true, // 顯示點點
+    loop: true, 
+    margin: 10, 
+    nav: true, 
+    autoplay:true,
+    autoplayTimeout:1000,
     responsive: {
             0: {
-            items: 1 // 螢幕大小為 0~600 顯示 1 個項目
+            items: 1 
             },
             600: {
-            items: 2 // 螢幕大小為 600~1000 顯示 3 個項目
+            items: 2 
             },
             1000: {
-            items: 4 // 螢幕大小為 1000 以上 顯示 5 個項目
+            items: 4 
             }
         }
     });
@@ -1431,24 +1441,24 @@
 <section class="contact_us">
     <div class="contact_pic">
         <div class="bg_pic">
-            <img src="./pic/index/footer_bg.png" alt="">
+            <img src="./pic/index/footer_bg.png" alt="綠色背景圖">
         </div>
         <div class="discount_dog">
-                <img class="dog" src="./pic/index/footer_dog.png" alt="">
+                <img class="dog" src="./pic/index/footer_dog.png" alt="博美狗">
         </div>
     </div>
     
     <div class="txt_wrap">
             <p class="txt_one">
-            <img src="./pic/index/paw.png" alt="">
+            <img src="./pic/index/paw.png" alt="狗腳掌icon">
             最新優惠消息
             </p>
             <p class="txt_two">
-                <img src="./pic/index/paw.png" alt="">
+                <img src="./pic/index/paw.png" alt="狗腳掌icon">
                 每月專屬折扣
             </p>
             <p class="txt_three">
-                <img src="./pic/index/paw.png" alt="">
+                <img src="./pic/index/paw.png" alt="狗腳掌icon">
                 新品上架通知
             </p> 
     </div>
@@ -1511,15 +1521,15 @@
     <div class="footer">
         <div class="footer_right">
             <a href="./index.html" class="logo">
-                <img src="./pic/index/logo.png" alt="">
+                <img src="./pic/index/logo.png" alt="logo">
             </a>
             <div class="icon">
-               <img src="./pic/index/footer_icon.PNG" alt="">
+               <img src="./pic/index/footer_icon.PNG" alt="社群軟體icon">
             </div>
         </div>
 
         <div class="footer_middle">
-            <img src="./pic/index/footer_card.PNG" alt="">
+            <img src="./pic/index/footer_card.PNG" alt="信用卡icon">
         </div>
 
         <div class="footer_left">
